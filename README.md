@@ -5,7 +5,7 @@ Escreva um ou dois  parágrafo resumindo o objetivo do seu projeto.
 ## Alunos integrantes da equipe
 
 * Thiago Guilherme Marques Soares
-* Nome completo do aluno 2
+* Gabriel Madureira Matos
 * Nome completo do aluno 3
 * Nome completo do aluno 4
 
