@@ -7,7 +7,7 @@ Escreva um ou dois  parágrafo resumindo o objetivo do seu projeto.
 * Thiago Guilherme Marques Soares
 * Gabriel Madureira Matos
 * Allan Junio de Souza
-* Nome completo do aluno 4
+* Wendell Leonardo Machado Miranda
 
 ## Professores responsáveis
 
