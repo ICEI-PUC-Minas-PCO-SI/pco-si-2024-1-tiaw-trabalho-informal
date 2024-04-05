@@ -9,7 +9,7 @@ Escreva um ou dois  parágrafo resumindo o objetivo do seu projeto.
 * Allan Junio de Souza
 * Wendell Leonardo Machado Miranda
 * Rômulo Davi Silveira Cunha 
-
+* Yalle Ramos Ferrari de Magalhães
 
 ## Professores responsáveis
 
