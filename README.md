@@ -8,6 +8,7 @@ Escreva um ou dois  parágrafo resumindo o objetivo do seu projeto.
 * Gabriel Madureira Matos
 * Allan Junio de Souza
 * Wendell Leonardo Machado Miranda
+* Rômulo Davi Silveira Cunha 
 
 ## Professores responsáveis
 
