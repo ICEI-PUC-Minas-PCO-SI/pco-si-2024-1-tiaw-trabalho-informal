@@ -10,10 +10,11 @@ Escreva um ou dois  parágrafo resumindo o objetivo do seu projeto.
 * Wendell Leonardo Machado Miranda
 * Rômulo Davi Silveira Cunha 
 
+
 ## Professores responsáveis
 
-* Nome completo do professor 1
-* Nome completo do professor 2
+* Amália Soares vieira de Vasconcelos 
+* Leonardo vilela Cardoso
 
 ## Instruções de utilização
 
