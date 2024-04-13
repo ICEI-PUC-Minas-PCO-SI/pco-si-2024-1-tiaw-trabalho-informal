@@ -6,13 +6,15 @@ Escreva um ou dois  parágrafo resumindo o objetivo do seu projeto.
 
 * Thiago Guilherme Marques Soares
 * Gabriel Madureira Matos
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Allan Junio de Souza
+* Wendell Leonardo Machado Miranda
+* Rômulo Davi Silveira Cunha 
+* Yalle Ramos Ferrari de Magalhães
 
 ## Professores responsáveis
 
-* Nome completo do professor 1
-* Nome completo do professor 2
+* Amália Soares vieira de Vasconcelos 
+* Leonardo vilela Cardoso
 
 ## Instruções de utilização
 
