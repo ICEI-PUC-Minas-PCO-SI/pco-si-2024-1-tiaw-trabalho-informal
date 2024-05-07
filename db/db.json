@@ -1,7 +1,7 @@
 {
   "contatos": [
     {
-      "nome": "Rommel Carneiro",
+      "nome": "Luciana Mara",
       "telefone": "1-770-736-8031",
       "email": "Sincere@april.biz",
       "cidade": "Belo Horizonte",
@@ -73,13 +73,13 @@
       "website": "jacynthe.com"
     },
     {
-      "id": 9,
-      "nome": "Glenna Reichert",
+      "nome": "João Caetano",
+      "telefone": "(775)976-6794",
+      "email": "joao@dana.io",
       "cidade": "Betim",
       "categoria": "amigos",
-      "email": "Chaim_McDermott@dana.io",
-      "telefone": "(775)976-6794",
-      "website": "conrad.com"
+      "website": "conrad.com",
+      "id": 9
     },
     {
       "id": 10,
@@ -102,18 +102,25 @@
   ],
   "usuarios": [
     {
-      "id": 1,
+      "id": "187cb7e5-e097-4224-8bc7-b610c855e2b1",
       "login": "admin",
       "senha": "123",
       "nome": "Administrador do Sistema",
       "email": "admin@abc.com"
     },
     {
-      "id": 2,
+      "id": "ec37c83d-4b7f-458d-9e10-3fda7d37cd3e",
       "login": "user",
       "senha": "123",
       "nome": "Usuario Comum",
       "email": "user@abc.com"
+    },
+    {
+      "id": "171022ee-09b0-468a-962a-9c0772753cd0",
+      "login": "rommelcarneiro",
+      "senha": "12345",
+      "nome": "Rommel Carneiro",
+      "email": "rommel@abc.com"
     }
   ],
   "locais": [
@@ -208,5 +215,16 @@
       "url": "https://www.pucpcaldas.br/",
       "cor": "green"
     }
+  ],
+  "lancamentos": [
+    { "mes": "jan-24", "categoria": "Alimentação", "valor": 500.00 },
+    { "mes": "jan-24", "categoria": "Transporte", "valor": 200.00 },
+    { "mes": "jan-24", "categoria": "Lazer", "valor": 300.00 },
+    { "mes": "fev-24", "categoria": "Alimentação", "valor": 450.00 },
+    { "mes": "fev-24", "categoria": "Transporte", "valor": 180.00 },
+    { "mes": "fev-24", "categoria": "Lazer", "valor": 350.00 },
+    { "mes": "mar-24", "categoria": "Alimentação", "valor": 600.00 },
+    { "mes": "mar-24", "categoria": "Transporte", "valor": 250.00 },
+    { "mes": "mar-24", "categoria": "Lazer", "valor": 400.00 }
   ]
 }
