@@ -1,0 +1,113 @@
+.Header {
+    background-color: #322E2E;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+  }
+  
+  .Menu {
+    display: flex;
+  } 
+  
+  .MenuLink {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+  
+  .group {
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    position: relative;
+    max-width: 190px;
+   }
+   
+   .input {
+    width: 100%;
+    height: 40px;
+    line-height: 28px;
+    padding: 0 1rem;
+    padding-left: 2.5rem;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    outline: none;
+    background-color: #f3f3f4;
+    color: #0d0c22;
+    transition: .3s ease;
+   }
+   
+   .input::placeholder {
+    color: #9e9ea7;
+   }
+   
+   .input:focus, input:hover {
+    outline: none;
+    border-color: rgba(234,76,137,0.4);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+   }
+   
+   .icon {
+    position: absolute;
+    left: 1rem;
+    fill: #9e9ea7;
+    width: 1rem;
+    height: 1rem;
+   }
+   
+  .User a {
+    color: rgb(117, 117, 117);
+    text-decoration: none;
+    margin-left: 10px;
+  }
+  
+  .Register {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #E5E7EB;
+    color: #322E2E;
+    cursor: pointer;
+  }
+
+.navbar-nav .nav-item .nav-link {
+    color: white;
+    /* Define a cor do texto como branco */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li { list-style-type: none;
+ }
+
+ul li {
+    margin-top: 25px;
+}
+#botao2{
+display: flex;
+color: #ffffff;
+background-color: black;
+}
+button{
+    border-color: #0d0c22;
+}
+  
+.emcima {
+  background-color: #322E2E;
+  padding: 18px;
+  margin-top: 50px;
+}
+
+.debaixo {
+  background-color: #3C3737;
+  color: white;
+  text-align: center;
+  padding: 60px;
+}
