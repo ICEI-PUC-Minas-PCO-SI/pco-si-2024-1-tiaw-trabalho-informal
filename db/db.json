@@ -107,6 +107,15 @@
       "categoria": "amigos",
       "website": "http://pagode.com.br",
       "id": 12
+    },
+    {
+      "nome": "João Esteves",
+      "telefone": "876348725638",
+      "email": "joao@joaoland.com",
+      "cidade": "Belo Horizonte",
+      "categoria": "trabalho",
+      "website": "http://joao.com",
+      "id": 13
     }
   ],
   "usuarios": [
