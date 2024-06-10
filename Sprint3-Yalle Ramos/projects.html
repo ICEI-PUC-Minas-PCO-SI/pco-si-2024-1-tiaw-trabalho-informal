@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos Publicados</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="topic/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <header class="Header">
+        <nav class="Menu">
+            <a href="index.html" class="MenuLink">Home</a>
+            <a href="#" class="MenuLink">Contato</a>
+            <a href="projects.html" class="MenuLink">Publicados</a>
+            <a href="#" class="MenuLink">Mais</a>
+        </nav>
+        <div class="group">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+                <g>
+                    <path
+                        d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
+                    </path>
+                </g>
+            </svg>
+            <input placeholder="Pesquisar..." type="search" class="input">
+        </div>
+        <button id="menuBtn">&#9776;<span class=icon-menu></span></button>
+        <div class="Menu">
+            <a href="#" class="MenuLink Login">Login</a>
+            <a href="#" class="MenuLink Register">Registrar</a>
+        </div>
+    </header>
+
+    <nav id="sideNav">
+        <a href="index.html" class="MenuLink">Home</a>
+        <a href="index.html" class="MenuLink">Contato</a>
+        <a href="projects.html" class="MenuLink">Publicados</a>
+        <a href="#" class="MenuLink">Mais</a>
+        <a href="#" class="MenuLink Login">Login</a>
+        <a href="#" class="MenuLink Register">Registrar</a>
+    </nav>
+
+
+    <div id="projetosPublicados">
+        <h1>Projetos Publicados</h1>
+        <div id="filters">
+            <!-- Filtro por nome do projeto -->
+            <div class="filter-option">
+                <label for="nome_projeto">Nome do Projeto:</label>
+                <input type="text" id="nome_projeto" name="nome_projeto">
+            </div>
+    
+            <!-- Filtro por área do projeto -->
+            <div class="filter-option">
+                <label for="area_projeto">Área do Projeto:</label>
+                <select name="area_projeto" id="area_projeto">
+                    <option value="">Todas as Áreas</option>
+                    <option value="seguranca_informacao">Segurança da Informação</option>
+                    <option value="programacao">Programação</option>
+                    <option value="qualidade_software">Qualidade de Software</option>
+                    <!-- Adicionar outras opções de área aqui depois -->
+                </select>
+            </div>
+    
+            <!-- Filtro por nível de projeto -->
+            <div class="filter-option">
+                <label for="nivel_projeto">Nível do Projeto:</label><br>
+                <input type="checkbox" id="iniciante" name="nivel_projeto" value="iniciante">
+                <label for="iniciante">Iniciante</label><br>
+                <input type="checkbox" id="intermediario" name="nivel_projeto" value="intermediario">
+                <label for="intermediario">Intermediário</label><br>
+                <input type="checkbox" id="experiente" name="nivel_projeto" value="experiente">
+                <label for="experiente">Experiente</label><br>
+            </div>
+    
+            <!-- Filtro por prazo de entrega -->
+            <div class="filter-option">
+                <label for="prazo_entrega">Prazo de Entrega:</label>
+                <input type="date" id="prazo_entrega" name="prazo_entrega" required><br><br> <span id="prazoValor"></span>
+            </div>
+    
+            <!-- Botão para aplicar os filtros -->
+            <button onclick="aplicarFiltros()">Filtrar</button>
+        </div>
+    
+        <div id="projectList">
+            <!-- Projetos serão adicionados aqui via JavaScript -->
+        </div>
+
+        <div id="main">
+            <div id="header_main">
+                <div id="title_header_main">
+                    <h1>PROJETO TESTE</h1>
+                    <i id="backToProjectsButton" class="bi bi-box-arrow-in-left"></i>
+                </div>
+                <p>Seus tópicos</p>
+            </div>
+            <div id="table_main">
+                <div id="buttonAdd_table_main">
+                    <i class="bi bi-plus-circle"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<!-- ignore templateElement -->
+<div class="element_table_main" style="display: none;" id="templateElement">
+    <div class="infoElement_table_main">
+        <div class="boxSelect_infoElement_table_main"></div>
+        <input type="text" placeholder="...">
+    </div>
+    <i class="bi bi-trash-fill"></i>
+</div>
+
+</html>
