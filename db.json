@@ -1,0 +1,95 @@
+{
+"lancamentos": [
+    
+    {
+        "id": 0,
+        "nomeVaga": "Desenvolvedor Java",
+        "valor": "R$5.990,00",
+        "linguagem": "Java",
+        "descricao": "Desenvolvimento de aplicações web utilizando Java.",
+        "localizacao": "Contagem, MG",
+        "nivelExperiencia": "Pleno"
+    },
+    {
+        "id": 1,
+        "nomeVaga": "Desenvolvedor Phyton",
+        "valor": "R$7.540,00",
+        "linguagem": "Phyton",
+        "descricao": "Desenvolvimento de sistemas utilizando Phyton",
+        "localizacao": "Belo Horizonte, MG",
+        "nivelExperiencia": "Senior"
+    },
+    {
+        "id": 2,
+        "nomeVaga": "Desenvolvedor Front-end",
+        "valor": "R$8.990,00",
+        "linguagem": "HTML, CSS, JavaScript",
+        "descricao": "Desenvolvimento de aplicações web",
+        "localizacao": "Contagem, MG",
+        "nivelExperiencia": "Pleno"
+    },
+    {
+        "id": 3,
+        "nomeVaga": "Analista de dados",
+        "valor": "R$5.990,00",
+        "linguagem": "Phyton",
+        "descricao": "Analista de dados utilizando Phyton.",
+        "localizacao": "Betim, MG",
+        "nivelExperiencia": "Senior"
+    },
+    {
+        "id": 4,
+        "nomeVaga": "Desenvolvedor utilizando arduino",
+        "valor": "  8.230,00",
+        "linguagem": "arduino",
+        "descricao": "Desenvolver projetos de robótica utilizando arduino.",
+        "localizacao": "Sete Lagoas, MG",
+        "nivelExperiencia": "Junior"
+    },
+    {
+        "id": 5,
+        "nomeVaga": "Desenvolvedor PHP",
+        "valor": "R$3.250,50",
+        "linguagem": "PHP",
+        "descricao": "Desenvolvimento de aplicações web utilizando PHP.",
+        "localizacao": "Contagem, MG",
+        "nivelExperiencia": "Junior"
+    },
+    {
+        "id": 6,
+        "nomeVaga": "Desenvolvedor Java",
+        "valor": "R$5.990,00",
+        "linguagem": "Java",
+        "descricao": "Desenvolvimento de aplicações web utilizando Java.",
+        "localizacao": "Contagem, MG",
+        "nivelExperiencia": "Pleno"
+    },
+    {
+        "id": 7,
+        "nomeVaga": "Desenvolvedor Java",
+        "valor": "R$5.990,00",
+        "linguagem": "Java",
+        "descricao": "Desenvolvimento de aplicações web utilizando Java.",
+        "localizacao": "Contagem, MG",
+        "nivelExperiencia": "Pleno"
+    },
+    {
+        "id": 8,
+        "nomeVaga": "Desenvolvedor Java",
+        "valor": "R$5.990,00",
+        "linguagem": "Java",
+        "descricao": "Desenvolvimento de aplicações web utilizando Java.",
+        "localizacao": "Contagem, MG",
+        "nivelExperiencia": "Pleno"
+    },
+    {
+        "id": 9,
+        "nomeVaga": "Desenvolvedor Java",
+        "valor": "R$5.990,00",
+        "linguagem": "Java",
+        "descricao": "Desenvolvimento de aplicações web utilizando Java.",
+        "localizacao": "Contagem, MG",
+        "nivelExperiencia": "Pleno"
+    }
+  ]
+}
