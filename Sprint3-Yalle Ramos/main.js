@@ -1,4 +1,4 @@
-// use para limpar o localstorage
+// use para limpar o localstoragee
 // localStorage.clear();
 
 let databaseTopics = {
@@ -75,6 +75,7 @@ function exibirProjetos() {
     // Exibir projetos na tela
     projetos.forEach(function (projeto) {
         var divProjeto = document.createElement('div');
+        divProjeto.className = "projetos";
         var titulo = document.createElement('h2');
         titulo.textContent = projeto.Nome;
         var imagem = document.createElement('img');
@@ -93,11 +94,19 @@ function exibirProjetos() {
 
         // add event click in buttonOpenTopic
         eventClickToOpenTopic(buttonOpenTopic, -1);
+        buttonOpenTopic.addEventListener('click', moveMainDiv);
     });
 
     // salvar a var projetos antes de modifcações feita no filtro pra evitar problemas ao pegar o index no eventClickToOpenTopic
     var projectButtonList = document.querySelectorAll('#projectList button');
     projectButtonFinalList = projectButtonList;
+}
+
+function moveMainDiv(event) {
+    const mainDiv = document.getElementById('main');
+    const parentOfClickedDiv = event.currentTarget.parentNode;
+
+    parentOfClickedDiv.appendChild(mainDiv);
 }
 
 function eventClickToOpenTopic(button, indexElement) {
@@ -118,6 +127,7 @@ function eventClickToOpenTopic(button, indexElement) {
         localStorage.setItem("databaseTopics", databaseTopicsJSON);
 
         const main = document.querySelector("#main");
+
         main.style.display = "flex";
 
         database = databaseTopics.topicoInteiroJSON[index];

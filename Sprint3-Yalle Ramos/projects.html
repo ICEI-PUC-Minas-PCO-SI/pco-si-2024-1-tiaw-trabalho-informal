@@ -37,15 +37,6 @@
         </div>
     </header>
 
-    <nav id="sideNav">
-        <a href="index.html" class="MenuLink">Home</a>
-        <a href="index.html" class="MenuLink">Contato</a>
-        <a href="projects.html" class="MenuLink">Publicados</a>
-        <a href="#" class="MenuLink">Mais</a>
-        <a href="#" class="MenuLink Login">Login</a>
-        <a href="#" class="MenuLink Register">Registrar</a>
-    </nav>
-
 
     <div id="projetosPublicados">
         <h1>Projetos Publicados</h1>
@@ -55,7 +46,7 @@
                 <label for="nome_projeto">Nome do Projeto:</label>
                 <input type="text" id="nome_projeto" name="nome_projeto">
             </div>
-    
+
             <!-- Filtro por área do projeto -->
             <div class="filter-option">
                 <label for="area_projeto">Área do Projeto:</label>
@@ -67,7 +58,7 @@
                     <!-- Adicionar outras opções de área aqui depois -->
                 </select>
             </div>
-    
+
             <!-- Filtro por nível de projeto -->
             <div class="filter-option">
                 <label for="nivel_projeto">Nível do Projeto:</label><br>
@@ -78,17 +69,18 @@
                 <input type="checkbox" id="experiente" name="nivel_projeto" value="experiente">
                 <label for="experiente">Experiente</label><br>
             </div>
-    
+
             <!-- Filtro por prazo de entrega -->
             <div class="filter-option">
                 <label for="prazo_entrega">Prazo de Entrega:</label>
-                <input type="date" id="prazo_entrega" name="prazo_entrega" required><br><br> <span id="prazoValor"></span>
+                <input type="date" id="prazo_entrega" name="prazo_entrega" required><br><br> <span
+                    id="prazoValor"></span>
             </div>
-    
+
             <!-- Botão para aplicar os filtros -->
-            <button onclick="aplicarFiltros()">Filtrar</button>
+            <button onclick="aplicarFiltros()" id="filter-button">Filtrar</button>
         </div>
-    
+
         <div id="projectList">
             <!-- Projetos serão adicionados aqui via JavaScript -->
         </div>
@@ -108,6 +100,22 @@
             </div>
         </div>
     </div>
+
+    <footer>
+        <div class="footer-grid">
+            <p><a href="">Home </a></p>
+            <p><a href="">Mais </a></p>
+            <p><a href="">Política </a></p>
+            <p><a href="">Contato</a></p>
+        </div>
+        <span>
+            <a href="https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-trabalho-informal"><i
+                    class="bi bi-github"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+        </span>
+        <p>&copy; 2024 MonkeyTech Solutions - Todos os direitos reservados</p>
+    </footer>
 
 </body>
 
