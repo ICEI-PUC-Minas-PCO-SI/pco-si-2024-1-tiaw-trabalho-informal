@@ -1,0 +1,41 @@
+
+{
+    "Pagamento" : [
+    {
+        "Cliente": {
+            "Id": 1,
+            "Nome": {
+                "PrimeiroNome": "",
+                "Sobrenome": ""
+            },
+            "CPF": "",
+            "NumeroCelular": "",
+            "Endereco": {
+                "CEP": "",
+                "Rua": "",
+                "Bairro": "",
+                "NumeroCasa": "",
+                "Estado": "",
+                "Cidade": "",
+                "PontoReferencia": ""
+            }
+        }
+    },
+    {
+        "Cartao": {
+            "Id": 1,
+            "Funcao": [
+                "Debito",
+                "Credito"
+            ],
+            "NomeTitular": "",
+            "DataVencimento": {
+                "Mes": "",
+                "Ano": ""
+            },
+            "CVC": "",
+            "ValorPagamento": 500
+        }
+    }
+ ]
+}
