@@ -4,11 +4,14 @@
 #main h2,
 #main h3,
 #main p,
-#main input {
+#main input,
+#main textarea {
     margin: 0;
     text-align: left;
     font-family: "Public Sans", sans-serif;
     color: #1c1c1c;
+    border: 0;
+    padding: 0;
 }
 
 #main h1 {
@@ -19,14 +22,9 @@
     font-weight: 600;
 }
 
-#main  p,
-#main  input {
+#main p,
+#main input {
     font-weight: normal;
-}
-
-#main  input {
-    border: 0;
-    padding: 0;
 }
 
 textarea:focus,
@@ -34,13 +32,14 @@ input:focus {
     outline: none;
 }
 
-#main img, i {
+#main img,
+i {
     cursor: pointer;
 }
 
 #main {
     display: none;
-    position: absolute; 
+    position: absolute;
     z-index: 1;
     top: 50%;
     left: 50%;
@@ -119,7 +118,7 @@ input:focus {
     background-color: #fff;
 }
 
-.element_table_main{
+.element_table_main {
     border-bottom: solid 2px black;
 }
 
@@ -170,37 +169,55 @@ input,
 .element_table_main {
     transition: background ease 0.2s;
 }
-.element_table_main input{
-    color: black!important;
+
+.element_table_main input,
+#main textarea {
+    color: black !important;
     background: none;
     outline: none;
     font-size: 3vh;
     font-family: Arial, Helvetica, sans-serif;
 }
 
+#main textarea {
+    width: 100%;
+    height: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
 #buttonAdd_table_main {
     cursor: pointer;
 }
 
-#buttonAdd_table_main:hover  {
+#buttonAdd_table_main:hover {
     background-color: #f7f7f7;
 }
-body{
+
+body {
     background: white;
 }
-#filters{
+
+#filters {
     border: 2px solid black;
 }
+
 #filters label {
     font-size: 20px;
 }
-#filter-button{
+
+#filter-button {
     font-size: 20px;
 }
-i.bi.bi-plus-circle, i.bi.bi-box-arrow-in-left,i.bi.bi-trash-fill{
+
+i.bi.bi-plus-circle,
+i.bi.bi-box-arrow-in-left,
+i.bi.bi-trash-fill {
     color: black;
 }
-#projetosPublicados{
+
+#projetosPublicados {
     height: 100%;
     width: 100%;
     position: relative;
