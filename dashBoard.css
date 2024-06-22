@@ -1,0 +1,23 @@
+*{
+    background-color: rgb(56, 49, 49);
+}
+body{
+    background-color: rgb(56, 49, 49);
+}
+
+text{
+    color: aliceblue    ;
+}
+
+h1, h2, h5{
+    color: azure;
+}
+
+
+.custom-card {
+    background-color: rgb(56, 49, 49);
+    color: white;
+}
+.white-text {
+    color: white;
+}
