@@ -24,6 +24,12 @@
         .white-text {
             color: white;
         }
+
+        .chart-container {
+            border: 2px solid yellow; /* Borda amarela para o contêiner do gráfico */
+            padding: 15px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 
@@ -55,10 +61,9 @@
         <div class="row">
             <div class="col-md-8">
                 <h2>Valores das vagas</h2>
-                <div class="mb-3">
-
+                <div class="chart-container">
+                    <canvas id="divBarChart"></canvas>
                 </div>
-                <canvas id="divBarChart"></canvas>
             </div>
             <div class="col-md-4">
                 <h2>Informações das Vagas</h2>
