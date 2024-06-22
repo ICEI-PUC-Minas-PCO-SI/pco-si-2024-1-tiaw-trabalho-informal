@@ -1,95 +1,95 @@
 {
-"lancamentos": [
+"vagas": [
     
     {
         "id": 0,
         "nomeVaga": "Desenvolvedor Java",
-        "valor": "R$5.990,00",
-        "linguagem": "Java",
-        "descricao": "Desenvolvimento de aplicações web utilizando Java.",
-        "localizacao": "Contagem, MG",
-        "nivelExperiencia": "Pleno"
-    },
-    {
+        "valor": "R$7.500,00",
+        "linguagem": "Java, Spring Boot",
+        "descricao": "Desenvolvimento de aplicações web utilizando Java e Spring Boot.",
+        "localizacao": "São Paulo, SP",
+        "nivelExperiencia": "Senior"
+      },
+      {
         "id": 1,
-        "nomeVaga": "Desenvolvedor Phyton",
-        "valor": "R$7.540,00",
-        "linguagem": "Phyton",
-        "descricao": "Desenvolvimento de sistemas utilizando Phyton",
+        "nomeVaga": "Analista de Dados",
+        "valor": "R$9.200,00",
+        "linguagem": "Python, SQL",
+        "descricao": "Análise de dados e construção de dashboards utilizando Python e SQL.",
+        "localizacao": "Rio de Janeiro, RJ",
+        "nivelExperiencia": "Especialista"
+      },
+      {
+        "id": 2,
+        "nomeVaga": "Engenheiro de Software",
+        "valor": "R$10.800,00",
+        "linguagem": "JavaScript, React, Node.js",
+        "descricao": "Desenvolvimento de soluções escaláveis utilizando tecnologias JavaScript.",
         "localizacao": "Belo Horizonte, MG",
         "nivelExperiencia": "Senior"
-    },
-    {
-        "id": 2,
-        "nomeVaga": "Desenvolvedor Front-end",
-        "valor": "R$8.990,00",
-        "linguagem": "HTML, CSS, JavaScript",
-        "descricao": "Desenvolvimento de aplicações web",
-        "localizacao": "Contagem, MG",
-        "nivelExperiencia": "Pleno"
-    },
-    {
+      },
+      {
         "id": 3,
-        "nomeVaga": "Analista de dados",
-        "valor": "R$5.990,00",
-        "linguagem": "Phyton",
-        "descricao": "Analista de dados utilizando Phyton.",
-        "localizacao": "Betim, MG",
-        "nivelExperiencia": "Senior"
-    },
-    {
+        "nomeVaga": "Designer UI/UX",
+        "valor": "R$6.800,00",
+        "linguagem": "",
+        "descricao": "Design de interfaces responsivas e experiências de usuário intuitivas.",
+        "localizacao": "Curitiba, PR",
+        "nivelExperiencia": "Pleno"
+      },
+      {
         "id": 4,
-        "nomeVaga": "Desenvolvedor utilizando arduino",
-        "valor": "  8.230,00",
-        "linguagem": "arduino",
-        "descricao": "Desenvolver projetos de robótica utilizando arduino.",
-        "localizacao": "Sete Lagoas, MG",
-        "nivelExperiencia": "Junior"
-    },
-    {
+        "nomeVaga": "Analista de Segurança da Informação",
+        "valor": "R$11.500,00",
+        "linguagem": "",
+        "descricao": "Implementação de políticas e auditorias de segurança da informação.",
+        "localizacao": "Porto Alegre, RS",
+        "nivelExperiencia": "Senior"
+      },
+      {
         "id": 5,
-        "nomeVaga": "Desenvolvedor PHP",
-        "valor": "R$3.250,50",
-        "linguagem": "PHP",
-        "descricao": "Desenvolvimento de aplicações web utilizando PHP.",
-        "localizacao": "Contagem, MG",
-        "nivelExperiencia": "Junior"
-    },
-    {
+        "nomeVaga": "Desenvolvedor Front-end",
+        "valor": "R$8.000,00",
+        "linguagem": "HTML, CSS, JavaScript",
+        "descricao": "Desenvolvimento de interfaces de usuário utilizando tecnologias front-end.",
+        "localizacao": "Florianópolis, SC",
+        "nivelExperiencia": "Pleno"
+      },
+      {
         "id": 6,
-        "nomeVaga": "Desenvolvedor Java",
-        "valor": "R$5.990,00",
-        "linguagem": "Java",
-        "descricao": "Desenvolvimento de aplicações web utilizando Java.",
-        "localizacao": "Contagem, MG",
-        "nivelExperiencia": "Pleno"
-    },
-    {
+        "nomeVaga": "Product Owner",
+        "valor": "R$12.000,00",
+        "linguagem": "",
+        "descricao": "Gestão do backlog de produto e definição de prioridades em equipe ágil.",
+        "localizacao": "Brasília, DF",
+        "nivelExperiencia": "Especialista"
+      },
+      {
         "id": 7,
-        "nomeVaga": "Desenvolvedor Java",
-        "valor": "R$5.990,00",
-        "linguagem": "Java",
-        "descricao": "Desenvolvimento de aplicações web utilizando Java.",
-        "localizacao": "Contagem, MG",
-        "nivelExperiencia": "Pleno"
-    },
-    {
+        "nomeVaga": "DevOps Engineer",
+        "valor": "R$9.500,00",
+        "linguagem": "Docker, Kubernetes",
+        "descricao": "Automatização de processos de deployment e monitoramento de infraestrutura.",
+        "localizacao": "Recife, PE",
+        "nivelExperiencia": "Senior"
+      },
+      {
         "id": 8,
-        "nomeVaga": "Desenvolvedor Java",
-        "valor": "R$5.990,00",
-        "linguagem": "Java",
-        "descricao": "Desenvolvimento de aplicações web utilizando Java.",
-        "localizacao": "Contagem, MG",
-        "nivelExperiencia": "Pleno"
-    },
-    {
+        "nomeVaga": "Engenheiro de Machine Learning",
+        "valor": "R$13.000,00",
+        "linguagem": "Python, TensorFlow",
+        "descricao": "Desenvolvimento e treinamento de modelos de Machine Learning.",
+        "localizacao": "Salvador, BA",
+        "nivelExperiencia": "Especialista"
+      },
+      {
         "id": 9,
-        "nomeVaga": "Desenvolvedor Java",
-        "valor": "R$5.990,00",
-        "linguagem": "Java",
-        "descricao": "Desenvolvimento de aplicações web utilizando Java.",
-        "localizacao": "Contagem, MG",
-        "nivelExperiencia": "Pleno"
-    }
+        "nomeVaga": "Analista de Suporte Técnico",
+        "valor": "R$5.500,00",
+        "linguagem": "",
+        "descricao": "Suporte técnico a usuários internos e manutenção de infraestrutura.",
+        "localizacao": "Manaus, AM",
+        "nivelExperiencia": "Junior"
+      }
   ]
 }
