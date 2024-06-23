@@ -1,19 +1,27 @@
 /* Estilo global */
 body {
-    background: grey;
+    background: #222;
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif !important;
+    color: #FFF;
 }
 
 p {
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
 }
-
-input::placeholder {
+ header img{
+    max-width: 50%;
+    max-height: 50%;
+}
+input::placeholder , input {
     padding-left: 10px;
     font-size: 15px;
+    color: #e2cc00;
+}
+input:hover, select:hover{
+    border: 2px solid #e2cc00!important;
 }
 
 h5 {
@@ -22,91 +30,107 @@ h5 {
 }
 
 i {
-    color: white;
+    color:#e2cc00;
     font-size: 40px;
     margin-right: 20px;
 }
+
 /* Header */
-.Header {
-    background-color: #322E2E;
-    color: white;
+header {
+    padding: 40px 4%;
+}
+
+header>.interface {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
-    padding: 30px;
-    margin-bottom: 20px;
 }
 
-.Menu {
-    display: flex;
-}
-
-.MenuLink {
-    color: white;
+header a {
+    color: #fff;
     text-decoration: none;
-    margin-right: 20px;
+    transition: .2s;
+}
+
+header nav.menu-desktop a:hover {
+    color: #fff;
+    transform: scale(1.05);
+}
+
+header nav ul {
+    list-style-type: none;
+}
+
+header nav.menu-desktop ul li {
+    display: inline-block;
+    padding: 0 40px;
+}
+
+.btn-abrir-menu{
+    display: none;
+}
+
+.btn-abrir-menu i{
+    color: #ffd700;
+    font-size: 40px;
+}
+
+.menu-mobile{
+    background-color: #000;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99999;
+    width: 0%;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.menu-mobile.abrir-menu{
+    width: 70%;
+}
+
+.menu-mobile.abrir-menu ~ .overlay-menu{
+    display: block;
+}
+
+
+.menu-mobile .btn-fechar{
+    padding: 20px 5%;
+}
+
+.menu-mobile .btn-fechar i{
+    color: #ffd700;
     font-size: 30px;
 }
 
-.group {
-    display: flex;
-    line-height: 28px;
-    align-items: center;
-    position: relative;
-    max-width: 190px;
-    margin: 0 auto;
-    /* Centralizando a barra de pesquisa */
+.menu-mobile nav ul{
+    text-align: right;
 }
 
-.input {
+.menu-mobile nav ul li a{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 20px 8%;
+    display: block;
+}   
+
+.menu-mobile nav ul li a:hover{
+    background-color: #ffd700;
+    color: #000;
+}
+
+.overlay-menu{
+    background-color: #000000df;
     width: 100%;
-    height: 40px;
-    line-height: 28px;
-    padding: 0 1rem;
-    padding-left: 2.5rem;
-    border: 2px solid transparent;
-    border-radius: 15px;
-    outline: none;
-    background-color: #f3f3f4;
-    color: #0d0c22;
-    transition: .3s ease;
-}
-
-.input::placeholder {
-    color: #9e9ea7;
-}
-
-.input:focus,
-.input:hover {
-    outline: none;
-    border-color: rgba(234, 76, 137, 0.4);
-    background-color: #fff;
-    box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
-}
-
-.icon {
-    position: absolute;
-    left: 1rem;
-    fill: #9e9ea7;
-    width: 1rem;
-    height: 1rem;
-}
-
-.User {
-    display: flex;
-    align-items: center;
-}
-
-.User a {
-    color: rgb(117, 117, 117);
-    text-decoration: none;
-    margin-left: 10px;
-}
-
-.Register,
-.Login {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 88888;
     display: none;
-    /* Inicialmente oculto */
 }
 
 /* Artefato e grid */
@@ -123,11 +147,11 @@ i {
 .grid {
     grid-column: 1;
     grid-row: 1/2;
-    background: rgb(255, 255, 255);
+    background: #333;
     height: 400px;
     border-radius: 10px;
     padding: 20px;
-    border: 2px solid black;
+    border: 2px solid #444;
     display: grid;
     grid-template-rows: repeat(6, 55px);
     grid-template-columns: repeat(3, 150px);
@@ -135,16 +159,25 @@ i {
     width: 450px;
 }
 
+.grid p , .dadosCartao p, h5{
+    color: #e2cc00;
+}
+
 .grid input,
 select {
     border-radius: 20px;
     border: none;
-    background: white;
+    background: #444;
+    color:#e2cc00!important;
     height: 30px;
     display: block;
     margin-top: 39px;
-    border: 0.2px solid rgb(109, 109, 109);
+    border: 0.2px solid #555;
     outline: none;
+}
+
+#estado{
+    height: 30px;
 }
 
 #nome {
@@ -163,6 +196,7 @@ select {
 }
 
 .p2, #sobrenome {
+    margin-left: 10px;
     grid-column: 2;
     grid-row: 1;
     display: inline-block;
@@ -201,6 +235,8 @@ select {
 select {
     height: 25px;
     width: 90%;
+    background: #444;
+    color: #FFF;
 }
 
 .p9, select {
@@ -217,8 +253,14 @@ select {
 #cidade {
     height: 25px;
     width: 80%;
+    background: #444;
+    color: #FFF;
 }
-
+#data{
+    background: #222;
+    color: #e2cc00;
+    width: 100%;
+}
 .p11, #pontoReferencia {
     grid-column: 3;
     grid-row: 6;
@@ -228,6 +270,8 @@ select {
 #pontoReferencia {
     height: 25px;
     width: 80%;
+    background: #444;
+    color: #FFF;
 }
 
 /* Dados do cartão */
@@ -237,31 +281,42 @@ select {
     grid-template-rows: repeat(4, 69px);
     grid-column: 2;
     grid-row: 1;
-    background-color: white;
+    background-color: #333;
     border-radius: 10px;
     padding: 20px;
     grid-gap: 10px;
     height: min-content;
-    border: 2px solid black;
+    border: 2px solid #444;
     padding-top: 5px;
 }
+
+
 
 #numeroCartao, #titular {
     width: 100%;
     border-radius: 10px;
     height: 30px;
+    background: #444;
+    color: #FFF;
 }
 
 #cvc {
     width: 50px;
+    background: #444;
+    color: #FFF;
 }
 
 #funcao {
     margin: 0px;
+    background: #444;
+    color: #FFF;
+    height: 30px;
 }
 
 #valorPagamento {
     height: 20px;
+    background: #444;
+    color: #FFF;
 }
 
 #tela .artefato .dadosCartao span p {
@@ -301,26 +356,44 @@ select {
 /* Pagamento */
 .bi-cart4 {
     font-size: 40px;
-    color: white;
+    color:#222;
+    width: 100%;
+    height: 100%;
+}
+.bi-cart4:hover, #pagamento p:hover{
+    color: #e2cc00;
+}
+
+#pagamento:hover{
+    background: black;
+    border: 2px solid #e2cc00;
+}
+#pagamento div {
+    height: 100%;
+    width: 100%;
+}
+#pagamento div:hover{
+    color: #e2cc00!important;
 }
 
 #pagamento {
     cursor: pointer;
-    background: black;
+    background: #e2cc00;
     height: 100px;
     text-align: center;
     border-radius: 10px;
     width: 25%;
     margin: 50px auto;
+    color: #222;
 }
 
 #pagamento p {
-    color: white;
+    color: #222;
 }
 
 /* Footer */
 footer {
-    background-color: #322E2E;
+    background-color: #222;
     width: 100%;
     text-align: center;
     height: 200px;
@@ -337,7 +410,7 @@ footer {
 }
 
 footer p {
-    color: white;
+    color: #e2cc00;
     font-size: 3vh !important;
     margin-right: 20px !important;
     margin-top: 20px !important;
@@ -346,10 +419,22 @@ footer p {
 
 p a {
     text-decoration: none;
-    color: white;
+    color: #e2cc00;
 }
 
 span {
     display: block;
     padding-top: 15px;
+}
+
+.btn-social button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: #ffd700;
+    font-size: 22px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: .2s;
 }
