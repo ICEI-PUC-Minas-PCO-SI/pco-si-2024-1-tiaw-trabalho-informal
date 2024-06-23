@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FIM GOOGLE FONTES -->
+    <!-- BOOTSTRAP ICONS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <!-- FIM BOOTSTRAP ICONS -->
+    <link rel="stylesheet" href="style.css" />
+    <title>MonkeyTech - Login</title>
+    <style>
+      /* Estilos gerais */
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      header {
+        padding: 40px 4%;
+      }
+
+      header > .interface {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      header a {
+        color: #fff;
+        text-decoration: none;
+        display: inline-block;
+        transition: 0.2s;
+      }
+
+      .interface {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo img {
+        height: 350px;
+      }
+
+      .menu-desktop ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+      }
+
+      .menu-desktop li {
+        margin-left: 20px;
+        padding-left: 20px;
+      }
+
+      .menu-desktop a {
+        display: grid;
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        justify-content: center;
+      }
+
+      .btn-abrir-menu {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      .menu-mobile {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 250px;
+        height: 100%;
+        background: #333;
+        color: #fff;
+        padding: 20px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+      }
+
+      .menu-mobile ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .menu-mobile li {
+        margin: 20px 0;
+      }
+
+      .menu-mobile a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+      }
+
+      .btn-fechar {
+        font-size: 24px;
+        cursor: pointer;
+        text-align: right;
+      }
+
+      .overlay-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 10;
+      }
+
+      @media (max-width: 768px) {
+        .menu-desktop {
+          display: none;
+        }
+        .btn-abrir-menu {
+          display: block;
+        }
+      }
+
+      /* Estilos para o formulário de login */
+      .container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .container h2 {
+        text-align: center;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      .error-message {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="interface">
+        <div class="logo">
+          <a href="#">
+            <img src="macaco.png" alt="Logo MonkeyTech" />
+          </a>
+        </div>
+        <!--logo-->
+
+        <nav class="menu-desktop">
+          <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Contato</a></li>            
+          </ul>
+        </nav>
+
+        <div class="btn-abrir-menu" id="btn-menu">
+          <i class="bi bi-list"></i>
+        </div>
+
+        <div class="menu-mobile" id="menu-mobile">
+          <div class="btn-fechar" id="btn-fechar-menu">
+            <i class="bi bi-x-lg"></i>
+          </div>
+
+          <nav>
+            <ul>
+              <li><a href="#">Início</a></li>
+              <li><a href="#">Contato</a></li>              
+              <li><a href="tela_cadastro.html">Registrar</a></li>
+            </ul>
+          </nav>
+        </div>
+        <!--menu-mobile-->
+        <div class="overlay-menu" id="overlay-menu"></div>
+      </div>
+      <!--interface-->
+    </header>
+
+    <div class="container">
+      <h2>Tela de Login</h2>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Senha:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <button type="submit">Entrar</button>
+      </form>
+      <p>
+        Não tem uma conta? <a href="tela_cadastro.html">Cadastre-se aqui</a>
+      </p>
+      <div id="erro"></div>
+    </div>
+
+    <script>
+      function showloading() {
+          const div = document.createElement("div");
+          div.classList.add("loading", "text-primary");
+  
+          const img = document.createElement("img");
+          img.setAttribute('src', 'https://i.pinimg.com/originals/c0/30/03/c03003776e9cb3e20ba7bd3171700507.gif');
+  
+          const label = document.createElement("label");
+          label.innerText = "\nCarregando...";
+  
+          div.appendChild(label);
+          div.appendChild(img);
+          document.body.appendChild(div);
+      }
+  
+      function hideloading() {
+          const loadings = document.getElementsByClassName("loading");
+          while (loadings.length > 0) {
+              loadings[0].remove();
+          }
+      }
+  
+      document.getElementById("loginForm").addEventListener("submit", function (event) {
+          event.preventDefault(); // Evita o envio do formulário         
+          showloading();
+          
+          var erro = document.getElementById("erro");
+          erro.innerHTML = ""; // Limpa mensagens de erro anteriores
+  
+          var email = document.getElementById("email").value;
+          var password = document.getElementById("password").value;
+  
+          // Enviar dados para o servidor JSON para verificação
+          fetch("https://059b1ee9-ce33-4b95-8cd6-3b8468c167f0-00-3adhzxokdlz4g.worf.replit.dev/cadastro_clientes")
+              .then((response) => {
+                  if (!response.ok) {
+                      throw new Error("Erro ao verificar login");
+                  }
+                  return response.json();
+              })
+              .then((data) => {
+                  // Encontrar o usuário com o email fornecido
+                  const user = data.find((user) => user.email === email);
+  
+                  if (user && user.password === password) {
+                      // Login bem-sucedido
+                      console.log("Login bem-sucedido");
+                      localStorage.setItem("profile", JSON.stringify(user));
+                      window.location.href = "pos-login.html";
+                  } else {
+                      // Login falhou
+                      var loginError = document.createElement("h3");
+                      loginError.classList.add("error-message");
+                      loginError.textContent = "Email ou senha inválidos.";
+                      erro.appendChild(loginError);
+                  }
+              })
+              .catch((error) => {
+                  var serverError = document.createElement("h3");
+                  serverError.classList.add("error-message");
+                  serverError.textContent = error.message;
+                  erro.appendChild(serverError);
+              })
+              .finally(() => {
+                  hideloading();
+              });
+      });
+  
+      // Menu mobile
+      document.getElementById("btn-menu").addEventListener("click", function () {
+          document.getElementById("menu-mobile").style.transform = "translateX(0)";
+          document.getElementById("overlay-menu").style.display = "block";
+          showloading();
+          setTimeout(() => hideloading(), 1000); // Adjust the timeout as needed
+      });
+  
+      document.getElementById("btn-fechar-menu").addEventListener("click", function () {
+          document.getElementById("menu-mobile").style.transform = "translateX(100%)";
+          document.getElementById("overlay-menu").style.display = "none";
+          showloading();
+          setTimeout(() => hideloading(), 1000); // Adjust the timeout as needed
+      });
+  
+      document.getElementById("overlay-menu").addEventListener("click", function () {
+          document.getElementById("menu-mobile").style.transform = "translateX(100%)";
+          document.getElementById("overlay-menu").style.display = "none";
+          showloading();
+          setTimeout(() => hideloading(), 1000); // Adjust the timeout as needed
+      });
+  
+      // Initial loading call
+      showloading();
+      setTimeout(() => hideloading(), 1000); // Adjust the timeout as needed
+  </script>
+  
+  </body>
+</html>

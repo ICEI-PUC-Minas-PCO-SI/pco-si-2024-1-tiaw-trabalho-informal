@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- FIM GOOGLE FONTES -->
+  <!-- BOOTSTRAP ICONS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <!-- FIM BOOTSTRAP ICONS -->
+  <link rel="stylesheet" href="style.css" />
+  <title>MonkeyTech</title>
+  <style>
+    /* Estilos gerais */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    header {
+      background-color: #f8f9fa;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .interface {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    .menu-desktop ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+
+    .menu-desktop li {
+      margin-left: 20px;
+    }
+
+    .menu-desktop a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .btn-abrir-menu {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .menu-mobile {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 250px;
+      height: 100%;
+      background: #333;
+      color: #fff;
+      padding: 20px;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .menu-mobile ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .menu-mobile li {
+      margin: 20px 0;
+    }
+
+    .menu-mobile a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .btn-fechar {
+      font-size: 24px;
+      cursor: pointer;
+      text-align: right;
+    }
+
+    .overlay-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 10;
+    }
+
+    @media (max-width: 768px) {
+      .menu-desktop {
+        display: none;
+      }
+      .btn-abrir-menu {
+        display: block;
+      }
+    }
+
+    /* Estilos para o formulário de cadastro */
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .container h2 {
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="file"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .error-message {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="interface">
+      <div class="logo">
+        <a href="#">
+          <img src="macaco.png" alt="Logo MonkeyTech" />
+        </a>
+      </div>
+      <!--logo-->
+
+      <nav class="menu-desktop">
+        <ul>
+          <li><a href="#">Início</a></li>
+          <li><a href="#">Contato</a></li>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#">Publicar</a></li>
+        </ul>
+      </nav>
+
+      <div class="btn-abrir-menu" id="btn-menu">
+        <i class="bi bi-list"></i>
+      </div>
+
+      <div class="menu-mobile" id="menu-mobile">
+        <div class="btn-fechar">
+          <i class="bi bi-x-lg"></i>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Contato</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Publicar</a></li>
+            <li><a href="#">Registrar</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!--menu-mobile-->
+      <div class="overlay-menu" id="overlay-menu"></div>
+
+      <div id="tela"></div>
+    </div>
+    <!--interface-->
+  </header>
+
+  <div class="container">
+    <h2>Tela de cadastro</h2>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirmar Senha:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+      </div>
+      <div class="form-group">
+        <label for="img">Carregar imagem:</label>
+        <input type="file" id="img" name="img" accept="image/*" required>
+      </div>
+      <button type="submit" id="createAccountBtn">Criar Conta</button>
+    </form>
+    <p>Já tem uma conta? <a href="login.html" id="loginLink">Entre aqui</a></p>
+    <div id="erro"></div>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Evita o envio do formulário
+      showloading();
+      var erro = document.getElementById("erro");
+      erro.innerHTML = ""; // Limpa mensagens de erro anteriores
+      
+      var nome = document.getElementById("nome").value;
+      var email = document.getElementById("email").value;
+      var regexp = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
+      var password = document.getElementById("password").value;
+      var confirmPassword = document.getElementById("confirmPassword").value;
+      var img = document.getElementById("img").files[0];
+
+      // Validação do e-mail
+      if (!regexp.test(email)) {
+        var emailError = document.createElement("h3");
+        emailError.classList.add("error-message");
+        emailError.textContent = "Por favor insira um e-mail válido.";
+        erro.appendChild(emailError);
+        return;
+      }
+
+      // Verificação se as senhas coincidem
+      if (password !== confirmPassword) {
+        var passwordError = document.createElement("h3");
+        passwordError.classList.add("error-message");
+        passwordError.textContent = "As senhas não coincidem.";
+        erro.appendChild(passwordError);
+        return;
+      }
+
+      // Leitura do arquivo de imagem
+      var reader = new FileReader();
+      reader.onloadend = function() {
+        var formData = {
+          "nome": nome,
+          "email": email,
+          "password": password,
+          "img": reader.result
+        };
+
+        // Enviar dados para o servidor JSON
+        fetch('https://059b1ee9-ce33-4b95-8cd6-3b8468c167f0-00-3adhzxokdlz4g.worf.replit.dev/cadastro_clientes', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Erro ao criar conta');
+          }
+          return response.json();
+        })
+        .then(data => {
+          console.log('Success:', data);
+          localStorage.setItem('profile', 'created');
+          window.location.href = "pos-login.html";
+        })
+        .catch(error => {
+          var serverError = document.createElement("h3");
+          serverError.classList.add("error-message");
+          serverError.textContent = error.message;
+          erro.appendChild(serverError);
+        });
+      };
+
+      if (img) {
+        reader.readAsDataURL(img);
+      } else {
+        var imgError = document.createElement("h3");
+        imgError.classList.add("error-message");
+        imgError.textContent = "Por favor selecione uma imagem.";
+        erro.appendChild(imgError);
+      }
+    });
+
+    // Menu mobile
+    document.getElementById('btn-menu').addEventListener('click', function() {
+      document.getElementById('menu-mobile').style.transform = 'translateX(0)';
+      document.getElementById('overlay-menu').style.display = 'block';
+    });
+
+    document.getElementById('btn-fechar-menu').addEventListener('click', function() {
+      document.getElementById('menu-mobile').style.transform = 'translateX(100%)';
+      document.getElementById('overlay-menu').style.display = 'none';
+    });
+
+    document.getElementById('overlay-menu').addEventListener('click', function() {
+      document.getElementById('menu-mobile').style.transform = 'translateX(100%)';
+      document.getElementById('overlay-menu').style.display = 'none';
+    });
+  </script>
+</body>
+</html>
