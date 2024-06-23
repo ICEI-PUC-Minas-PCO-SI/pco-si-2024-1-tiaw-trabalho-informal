@@ -242,7 +242,7 @@
           <input type="password" id="password" name="password" required />
         </div>
         <button type="submit">Entrar</button>
-      </form>
+      </form>      
       <p>
         Não tem uma conta? <a href="tela_cadastro.html">Cadastre-se aqui</a>
       </p>
@@ -298,7 +298,7 @@
                       // Login bem-sucedido
                       console.log("Login bem-sucedido");
                       localStorage.setItem("profile", JSON.stringify(user));
-                      window.location.href = "pos-login.html";
+                      window.location.href = "./projetos.html";
                   } else {
                       // Login falhou
                       var loginError = document.createElement("h3");
