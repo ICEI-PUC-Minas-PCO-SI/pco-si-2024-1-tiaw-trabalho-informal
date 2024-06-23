@@ -17,6 +17,21 @@
             margin: 0;
         }
 
+        .filter-card select {
+            background-color: #000;
+            color: #FFD700;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .filter-card select option {
+            background-color: #000;
+            color: #FFD700;
+        }
+
         .filter-card {
             background-color: rgb(56, 49, 49);
             color: white;
@@ -254,31 +269,31 @@
                 return []; // Retorna um array vazio em caso de erro
             }
         }
-    
+
         function renderProjects(projects) {
             const projectCardsContainer = document.querySelector('.project-cards');
             projectCardsContainer.innerHTML = ''; // Limpa o conteúdo atual antes de renderizar os novos projetos
-    
+
             projects.forEach(project => {
                 // Cria um card para cada projeto
                 const card = document.createElement('div');
                 card.classList.add('project-card');
-    
+
                 // Adiciona título do projeto
                 const title = document.createElement('h2');
                 title.textContent = project.nomeVaga;
                 card.appendChild(title);
-    
+
                 // Adiciona valor do projeto
                 const valor = document.createElement('p');
                 valor.textContent = `Valor: ${project.valor}`;
                 card.appendChild(valor);
-    
+
                 // Adiciona descrição do projeto
                 const description = document.createElement('p');
                 description.textContent = project.descricao;
                 card.appendChild(description);
-    
+
                 // Adiciona habilidades do projeto
                 const skills = document.createElement('div');
                 skills.classList.add('skills');
@@ -289,12 +304,12 @@
                     skills.appendChild(skillBox);
                 });
                 card.appendChild(skills);
-    
+
                 // Adiciona o card ao container de cards de projetos
                 projectCardsContainer.appendChild(card);
             });
         }
-    
+
         // Evento que garante que o DOM foi carregado antes de chamar a função fetchProjects e renderizar os projetos
         document.addEventListener('DOMContentLoaded', () => {
             fetchProjects().then(projects => {
@@ -304,58 +319,58 @@
                 // Aqui você poderia adicionar lógica para mostrar uma mensagem de erro na página
             });
         });
-    
+
         // Função para aplicar filtros aos projetos com base nos critérios selecionados
         function filterProjects() {
             fetchProjects().then(projects => {
                 let filteredProjects = projects;
-    
+
                 // Obter valores selecionados nos filtros
                 const location = document.getElementById('location').value;
                 const category = document.getElementById('category').value;
                 const minPrice = parseInt(document.getElementById('price-range').value);
                 const experienceLevel = document.querySelector('.experience-level .level.selected').id;
-    
+
                 // Aplicar filtros
                 filteredProjects = filteredProjects.filter(project => {
                     let passLocation = true;
                     let passCategory = true;
                     let passPrice = true;
                     let passExperience = true;
-    
+
                     // Filtro por localização
                     if (location && project.localizacao !== location) {
                         passLocation = false;
                     }
-    
+
                     // Filtro por categoria
                     if (category === 'publicado' && project.statusProjeto !== 'publicado') {
                         passCategory = false;
                     } else if (category === 'concluido' && project.statusProjeto !== 'concluido') {
                         passCategory = false;
                     }
-    
+
                     // Filtro por preço
                     if (project.valor && parseCurrency(project.valor) < minPrice) {
                         passPrice = false;
                     }
-    
+
                     // Filtro por nível de experiência
                     if (experienceLevel !== 'todos' && project.nivelExperiencia.toLowerCase() !== experienceLevel) {
                         passExperience = false;
                     }
-    
+
                     // Retornar true se o projeto passar por todos os filtros
                     return passLocation && passCategory && passPrice && passExperience;
                 });
-    
+
                 // Renderizar os projetos filtrados
                 renderProjects(filteredProjects);
             }).catch(error => {
                 console.error('Erro ao filtrar os projetos:', error);
             });
         }
-    
+
         // Função para selecionar o nível de experiência
         function selectExperienceLevel(level) {
             // Remove a seleção de todos os níveis de experiência
@@ -363,18 +378,18 @@
             allLevels.forEach(level => {
                 level.classList.remove('selected');
             });
-    
+
             // Adiciona a classe 'selected' ao nível selecionado
             const selectedLevel = document.getElementById(level);
             selectedLevel.classList.add('selected');
         }
-    
+
         // Função auxiliar para parse de moeda (R$ 7.500,00 para 7500)
         function parseCurrency(currencyString) {
             return parseFloat(currencyString.replace(/[^\d,-]/g, '').replace(',', '.'));
         }
     </script>
-    
+
 
 </body>
 
