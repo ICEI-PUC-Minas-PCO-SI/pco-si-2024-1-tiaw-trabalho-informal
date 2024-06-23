@@ -8,7 +8,15 @@ body {
   height: min-content;
   font-family: Arial, Helvetica, sans-serif !important;
 }
-
+#arquivo::-webkit-file-upload-button{
+  color: yellow;
+  background: black;
+  border: none;
+  cursor: pointer;
+  border-left: 3px solid yellow;
+  border-top: 3px solid yellow;
+  border-radius: 10px;
+}
 .Header {
   background-color: #322E2E;
   color: white;
@@ -27,7 +35,10 @@ body {
   justify-content: center;
   align-items: center;
 }
-
+.projetos p {
+  max-width: 100%;
+  word-wrap:break-word;
+}
 .Menu {
   display: flex;
 }
