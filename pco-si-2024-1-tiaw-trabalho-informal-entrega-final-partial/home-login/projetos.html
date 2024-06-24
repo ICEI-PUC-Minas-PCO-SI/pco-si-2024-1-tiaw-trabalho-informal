@@ -271,7 +271,7 @@ main {
                 <ul>
                     <li><a href="#">Inicio</a></li>
                     <li><a href="#">Publicar</a></li>
-                    <li><a href="#">Chat</a></li>
+                    <li><a href="#" id="chatLink">Chat</a></li>
                 </ul>
             </nav>
         </div>
@@ -499,6 +499,14 @@ main {
 
         postLogin();
       });
+
+      function chamaChat() {
+      window.location.href = "./chat/indexchat.html";
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('chatLink').addEventListener('click', chamaChat);
+    });
 
     </script>
 
