@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtro e Cards de Projetos</title>
+    <style>
+        /* Estilos anteriores permanecem os mesmos */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgb(56, 49, 49);
+            margin: 0;
+            padding-top: 80px; /* Adiciona espaço para o cabeçalho fixo */
+        }
+
+        .filter-card select {
+            background-color: #000;
+            color: #FFD700;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .filter-card select option {
+            background-color: #000;
+            color: #FFD700;
+        }
+
+        .filter-card {
+            background-color: rgb(56, 49, 49);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .filter-card h2,
+        .filter-card h3,
+        .filter-card label {
+            margin: 0 0 10px;
+        }
+
+        .filter-card .select-box {
+            margin-bottom: 20px;
+        }
+
+        .filter-card .range-slider {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .filter-card .range-slider label {
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+            font-size: 12px;
+        }
+
+        .filter-card .range-slider input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 6px;
+            background: #ddd;
+            outline: none;
+            opacity: 0.7;
+            transition: opacity .15s ease-in-out;
+            position: absolute;
+            top: 40px;
+        }
+
+        .filter-card .range-slider input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            background: #4CAF50;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .filter-card .range-slider input[type="range"]::-moz-range-thumb {
+            width: 15px;
+            height: 15px;
+            background: #4CAF50;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .filter-card .range-slider-value {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #ffffff;
+            margin-top: 5px;
+            padding: 0 5px;
+        }
+
+        .filter-card .experience-level {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .filter-card .experience-level .level {
+            width: 30%;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            background-color: yellow;
+            color: black;
+            cursor: pointer;
+        }
+
+        .filter-card .experience-level .level.selected {
+            background-color: #FFD700;
+            color: black;
+        }
+
+        .filter-card .experience-level .all {
+            width: 30%;
+            background-color: #4CAF50;
+            color: white;
+            cursor: default;
+        }
+
+        .filter-card .experience-level .level:hover {
+            background-color: #FFD700;
+        }
+
+        .filter-card .filter-button {
+            display: flex;
+            justify-content: center;
+        }
+
+        .filter-card .filter-button button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: yellow;
+            color: black;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .filter-card .filter-button button:hover {
+            background-color: #FFD700;
+        }
+
+        .project-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .project-card {
+            background-color: rgb(56, 49, 49);
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            border: 2px solid yellow;
+        }
+
+        .project-card h2,
+        .project-card p {
+            margin: 0 0 10px;
+        }
+
+        .project-card .skills {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .project-card .skill-box {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            width: 75px;
+            border-radius: 4px;
+            color: #FFD700;
+        }
+
+        /* Estilo do cabeçalho */
+        header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #242424;
+    z-index: 1000;
+    padding: 10px 20px; /* Ajuste do padding */
+}
+
+header .interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px; /* Largura máxima ajustada */
+    margin: 0 auto; /* Centraliza o cabeçalho */
+}
+
+header .logo img {
+    width: 80px; /* Tamanho do ícone do macaco ajustado */
+    height: auto;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    transition: .2s;
+}
+
+header nav.menu-desktop ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav.menu-desktop ul li {
+    margin: 0 10px; /* Espaçamento entre os itens do menu */
+}
+
+main {
+    margin-top: 100px; /* Ajusta o conteúdo para abaixo do cabeçalho fixo */
+}
+#tela{
+    float: right;
+    margin-right: 7%;
+    margin-top: -90px;
+    width: 5px;
+}
+
+#profileIcon{
+    background-color: #575656;
+    color: #ffd700;
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="interface">
+            <div class="logo">
+                <a href="#">
+                    <img src="macaco.png" alt="Logo MonkeyTech">
+                </a>
+            </div><!-- logo -->
+
+            <nav class="menu-desktop">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Publicar</a></li>
+                    <li><a href="#">Chat</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div id="tela"> </div>
+    </header>
+<body>
+
+    
+    <div class="filter-card">
+        <h2>Filtro</h2>
+
+        <div class="select-box">
+            <label for="location">Localização:</label>
+            <select id="location">
+                <option value="">Qualquer localização</option>
+                <option value="São Paulo, SP">São Paulo, SP</option>
+                <option value="Rio de Janeiro, RJ">Rio de Janeiro, RJ</option>
+                <option value="Belo Horizonte, MG">Belo Horizonte, MG</option>
+                <option value="Curitiba, PR">Curitiba, PR</option>
+                <option value="Porto Alegre, RS">Porto Alegre, RS</option>
+                <option value="Florianópolis, SC">Florianópolis, SC</option>
+                <option value="Brasília, DF">Brasília, DF</option>
+                <option value="Recife, PE">Recife, PE</option>
+                <option value="Salvador, BA">Salvador, BA</option>
+                <option value="Manaus, AM">Manaus, AM</option>
+            </select>
+        </div>
+
+        <div class="select-box">
+            <label for="category">Categoria Projeto:</label>
+            <select id="category">
+                <option value="">Melhores projetos para você</option>
+                <option value="publicado">Projetos Publicados</option>
+                <option value="concluido">Projetos Concluídos</option>
+            </select>
+        </div>
+
+        <div class="range-slider">
+            <label for="price-range">Preço:</label>
+            <input type="range" id="price-range" min="100" max="13000" value="13000" step="100">
+            <div class="range-slider-value">
+                <span id="min-price">R$ 100</span>
+                <span id="max-price">R$ 13.000</span>
+            </div>
+        </div>
+
+        <h3>Nível de Experiência</h3>
+        <div class="experience-level">
+            <div class="level" id="junior" onclick="selectExperienceLevel('junior')">Junior</div>
+            <div class="level" id="pleno" onclick="selectExperienceLevel('pleno')">Pleno</div>
+            <div class="level" id="senior" onclick="selectExperienceLevel('senior')">Sênior</div>
+            <div class="level all" id="todos" onclick="selectExperienceLevel('todos')">Todos</div>
+        </div>
+
+        <div class="filter-button">
+            <button onclick="filterProjects()">Filtrar</button>
+        </div>
+    </div>
+
+    <div class="project-cards">
+        <!-- Aqui serão inseridos os cards dinamicamente -->
+    </div>
+
+    <script>
+        async function fetchProjects() {
+            try {
+                const response = await fetch('https://059b1ee9-ce33-4b95-8cd6-3b8468c167f0-00-3adhzxokdlz4g.worf.replit.dev/vagas'); // URL da sua API
+                const projects = await response.json();
+                return projects;
+            } catch (error) {
+                console.error('Erro ao buscar os projetos:', error);
+                return []; // Retorna um array vazio em caso de erro
+            }
+        }
+
+        function renderProjects(projects) {
+            const projectCardsContainer = document.querySelector('.project-cards');
+            projectCardsContainer.innerHTML = ''; // Limpa o conteúdo atual antes de renderizar os novos projetos
+
+            projects.forEach(project => {
+                // Cria um card para cada projeto
+                const card = document.createElement('div');
+                card.classList.add('project-card');
+
+                // Adiciona título do projeto
+                const title = document.createElement('h2');
+                title.textContent = project.nomeVaga;
+                card.appendChild(title);
+
+                // Adiciona valor do projeto
+                const valor = document.createElement('p');
+                valor.textContent = `Valor: ${project.valor}`;
+                card.appendChild(valor);
+
+                // Adiciona descrição do projeto
+                const description = document.createElement('p');
+                description.textContent = project.descricao;
+                card.appendChild(description);
+
+                // Adiciona habilidades do projeto
+                const skills = document.createElement('div');
+                skills.classList.add('skills');
+                project.habilidades.forEach(skill => {
+                    const skillBox = document.createElement('div');
+                    skillBox.classList.add('skill-box');
+                    skillBox.textContent = skill;
+                    skills.appendChild(skillBox);
+                });
+                card.appendChild(skills);
+
+                // Adiciona o card ao container de cards de projetos
+                projectCardsContainer.appendChild(card);
+            });
+        }
+
+        // Evento que garante que o DOM foi carregado antes de chamar a função fetchProjects e renderizar os projetos
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchProjects().then(projects => {
+                renderProjects(projects);
+            }).catch(error => {
+                console.error('Erro ao buscar e renderizar os projetos:', error);
+                // Aqui você poderia adicionar lógica para mostrar uma mensagem de erro na página
+            });
+        });
+
+        // Função para aplicar filtros aos projetos com base nos critérios selecionados
+        function filterProjects() {
+            fetchProjects().then(projects => {
+                let filteredProjects = projects;
+
+                // Obter valores selecionados nos filtros
+                const location = document.getElementById('location').value;
+                const category = document.getElementById('category').value;
+                const minPrice = parseInt(document.getElementById('price-range').value);
+                const experienceLevel = document.querySelector('.experience-level .level.selected').id;
+
+                // Aplicar filtros
+                filteredProjects = filteredProjects.filter(project => {
+                    let passLocation = true;
+                    let passCategory = true;
+                    let passPrice = true;
+                    let passExperience = true;
+
+                    // Filtro por localização
+                    if (location && project.localizacao !== location) {
+                        passLocation = false;
+                    }
+
+                    // Filtro por categoria
+                    if (category === 'publicado' && project.statusProjeto !== 'publicado') {
+                        passCategory = false;
+                    } else if (category === 'concluido' && project.statusProjeto !== 'concluido') {
+                        passCategory = false;
+                    }
+
+                    // Filtro por preço
+                    if (project.valor && parseCurrency(project.valor) < minPrice) {
+                        passPrice = false;
+                    }
+
+                    // Filtro por nível de experiência
+                    if (experienceLevel !== 'todos' && project.nivelExperiencia.toLowerCase() !== experienceLevel) {
+                        passExperience = false;
+                    }
+
+                    // Retornar true se o projeto passar por todos os filtros
+                    return passLocation && passCategory && passPrice && passExperience;
+                });
+
+                // Renderizar os projetos filtrados
+                renderProjects(filteredProjects);
+            }).catch(error => {
+                console.error('Erro ao filtrar os projetos:', error);
+            });
+        }
+
+        // Função para selecionar o nível de experiência
+        function selectExperienceLevel(level) {
+            // Remove a seleção de todos os níveis de experiência
+            const allLevels = document.querySelectorAll('.experience-level .level');
+            allLevels.forEach(level => {
+                level.classList.remove('selected');
+            });
+
+            // Adiciona a classe 'selected' ao nível selecionado
+            const selectedLevel = document.getElementById(level);
+            selectedLevel.classList.add('selected');
+        }
+
+        // Função auxiliar para parse de moeda (R$ 7.500,00 para 7500)
+        function parseCurrency(currencyString) {
+            return parseFloat(currencyString.replace(/[^\d,-]/g, '').replace(',', '.'));
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+        function postLogin() {
+          let str = `
+            <div class="dropdown">
+                <button type="button" class="btn btn-primary dropdown-toggle" id="profileIcon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="User" style="width: 60px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-person-circle profile-icon" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                            <path fill-rule="evenodd" d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM8 1a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.226 5.468 2.37A7 7 0 0 0 8 1Z"/>
+                        </svg>  
+                      <link rel="stylesheet" href="#">                  
+                    </div>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="profileIcon">
+                    <a class="dropdown-item" href="#" id="logoutLink">Logout</a>
+                </div>
+            </div>`;
+          document.getElementById("tela").innerHTML = str;
+
+          const logoutLink = document.getElementById("logoutLink");
+          logoutLink.addEventListener("click", function () {
+            logoutSite();
+          });
+        }
+
+        function logoutSite() {
+          localStorage.removeItem("profile");
+          window.location.href = "index.html";
+        }
+
+        postLogin();
+      });
+
+    </script>
+
+
+</body>
+
+</html>
