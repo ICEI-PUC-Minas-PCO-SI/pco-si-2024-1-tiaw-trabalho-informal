@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propostas Aceitas</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+    <header class="d-flex justify-content-between align-items-center p-3">
+        <div class="logo">
+            <img src="../imagens/71716115-3fca-4edc-9ecb-901f47787325.jpg" alt="Logo" class="img-fluid">
+        </div>
+        <nav>
+            <ul class="nav">
+                <li class="nav-item"><a class="nav-link" href="#">Início</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contato</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Sobre</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Publicar</a></li>
+                <li class="nav-item"><a class="nav-link btn btn-warning text-dark" href="#">Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto py-5">
+        <form id="project-form">
+            <div class="row justify-content-center">
+                <div class="col-md-8 px-0">
+                    <h3 class="text-center mb-4">Enviar Projeto</h3>
+                    <div class="project d-flex flex-column mb-5">
+                        <div class="select my-4">
+                            <label for="fileInput" class="btn btn-secondary">
+                              Selecione um arquivo do projeto
+                              <input type="file" id="fileInput" class="custom-file-input">
+                            </label>
+                        </div>
+                        <div class="comment my-4">
+                            <label for="comment1" class="font-weight-bold">Comentários</label>
+                            <textarea class="shadow-sm w-100 border rounded" name="" id="comment1" rows="5" placeholder="Digite seus comentários aqui..."></textarea>
+                        </div>
+                        <div class="conclusion my-4 form-group">
+                            <button type="submit" class="btn btn-warning text-dark">Enviar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <footer class="text-center py-3">
+        <div class="social-links my-4">
+            <a href="#" title="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+            <a href="#" title="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        </div>
+        <p>© 2024 MonkeyTech Solutions - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="projetos.js"></script>
+</body>
+</html>
