@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +16,6 @@
             padding-top: 80px;
             /* Adiciona espaço para o cabeçalho fixo */
         }
-
         .filter-card select {
             background-color: #000;
             color: #FFD700;
@@ -27,12 +25,10 @@
             width: 100%;
             margin-bottom: 10px;
         }
-
         .filter-card select option {
             background-color: #000;
             color: #FFD700;
         }
-
         .filter-card {
             background-color: rgb(56, 49, 49);
             color: white;
@@ -46,29 +42,24 @@
             flex-direction: column;
             justify-content: space-between;
         }
-
         .filter-card h2,
         .filter-card h3,
         .filter-card label {
             margin: 0 0 10px;
         }
-
         .filter-card .select-box {
             margin-bottom: 20px;
         }
-
         .filter-card .range-slider {
             margin-bottom: 20px;
             position: relative;
         }
-
         .filter-card .range-slider label {
             display: block;
             margin-bottom: 5px;
             text-align: left;
             font-size: 12px;
         }
-
         .filter-card .range-slider input[type="range"] {
             -webkit-appearance: none;
             width: 100%;
@@ -80,7 +71,6 @@
             position: absolute;
             top: 40px;
         }
-
         .filter-card .range-slider input[type="range"]::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
@@ -90,7 +80,6 @@
             cursor: pointer;
             border-radius: 50%;
         }
-
         .filter-card .range-slider input[type="range"]::-moz-range-thumb {
             width: 15px;
             height: 15px;
@@ -98,7 +87,6 @@
             cursor: pointer;
             border-radius: 50%;
         }
-
         .filter-card .range-slider-value {
             display: flex;
             justify-content: space-between;
@@ -107,13 +95,11 @@
             margin-top: 5px;
             padding: 0 5px;
         }
-
         .filter-card .experience-level {
             display: flex;
             justify-content: space-between;
             margin-bottom: 20px;
         }
-
         .filter-card .experience-level .level {
             width: 30%;
             height: 50px;
@@ -125,28 +111,23 @@
             color: black;
             cursor: pointer;
         }
-
         .filter-card .experience-level .level.selected {
             background-color: #FFD700;
             color: black;
         }
-
         .filter-card .experience-level .all {
             width: 30%;
             background-color: #4CAF50;
             color: white;
             cursor: default;
         }
-
         .filter-card .experience-level .level:hover {
             background-color: #FFD700;
         }
-
         .filter-card .filter-button {
             display: flex;
             justify-content: center;
         }
-
         .filter-card .filter-button button {
             padding: 10px 20px;
             border: none;
@@ -156,11 +137,9 @@
             cursor: pointer;
             font-size: 16px;
         }
-
         .filter-card .filter-button button:hover {
             background-color: #FFD700;
         }
-
         .project-cards {
             display: flex;
             flex-wrap: wrap;
@@ -168,7 +147,6 @@
             gap: 20px;
             padding: 20px;
         }
-
         .project-card {
             background-color: rgb(56, 49, 49);
             color: white;
@@ -178,12 +156,10 @@
             width: 300px;
             border: 2px solid yellow;
         }
-
         .project-card h2,
         .project-card p {
             margin: 0 0 10px;
         }
-
         .project-card .skills {
             display: flex;
             justify-content: space-between;
@@ -191,7 +167,6 @@
             color: #666;
             margin-top: 10px;
         }
-
         .project-card .skill-box {
             border: 1px solid #ddd;
             padding: 8px;
@@ -200,7 +175,6 @@
             border-radius: 4px;
             color: #FFD700;
         }
-
         /* Estilo do cabeçalho */
         header {
             position: fixed;
@@ -212,7 +186,6 @@
             padding: 10px 20px;
             /* Ajuste do padding */
         }
-
         header .interface {
             display: flex;
             align-items: center;
@@ -222,50 +195,62 @@
             margin: 0 auto;
             /* Centraliza o cabeçalho */
         }
-
         header .logo img {
             width: 80px;
             /* Tamanho do ícone do macaco ajustado */
             height: auto;
         }
-
         header a {
             color: #fff;
             text-decoration: none;
             transition: .2s;
         }
-
         header nav.menu-desktop ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
             display: flex;
         }
-
         header nav.menu-desktop ul li {
             margin: 0 10px;
             /* Espaçamento entre os itens do menu */
         }
-
         main {
             margin-top: 100px;
             /* Ajusta o conteúdo para abaixo do cabeçalho fixo */
         }
-
         #tela {
             float: right;
             margin-right: 7%;
             margin-top: -90px;
             width: 5px;
         }
-
         #profileIcon {
             background-color: #575656;
             color: #ffd700;
         }
+
+        /* Botão Candidatar */
+        .btn-primary {
+            background-color: yellow;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .btn-primary:hover {
+            background-color: #FFD700;
+            color: black;
+        }
     </style>
 </head>
-
 <body>
     <header>
         <div class="interface">
@@ -285,13 +270,9 @@
         </div>
         <div id="tela"> </div>
     </header>
-
-    <body>
-
-
+    <main>
         <div class="filter-card">
             <h2>Filtro</h2>
-
             <div class="select-box">
                 <label for="location">Localização:</label>
                 <select id="location">
@@ -308,7 +289,6 @@
                     <option value="Manaus, AM">Manaus, AM</option>
                 </select>
             </div>
-
             <div class="select-box">
                 <label for="category">Categoria Projeto:</label>
                 <select id="category">
@@ -317,7 +297,6 @@
                     <option value="concluido">Projetos Concluídos</option>
                 </select>
             </div>
-
             <div class="range-slider">
                 <label for="price-range">Preço:</label>
                 <input type="range" id="price-range" min="100" max="13000" value="13000" step="100">
@@ -326,7 +305,6 @@
                     <span id="max-price">R$ 13.000</span>
                 </div>
             </div>
-
             <h3>Nível de Experiência</h3>
             <div class="experience-level">
                 <div class="level" id="junior" onclick="selectExperienceLevel('junior')">Junior</div>
@@ -334,16 +312,13 @@
                 <div class="level" id="senior" onclick="selectExperienceLevel('senior')">Sênior</div>
                 <div class="level all" id="todos" onclick="selectExperienceLevel('todos')">Todos</div>
             </div>
-
             <div class="filter-button">
                 <button onclick="filterProjects()">Filtrar</button>
             </div>
         </div>
-
         <div class="project-cards">
             <!-- Aqui serão inseridos os cards dinamicamente -->
         </div>
-
         <script>
             async function fetchProjects() {
                 try {
@@ -391,6 +366,14 @@
                     });
                     card.appendChild(skills);
 
+                    // Adiciona botão para acessar a vaga
+                    const link = document.createElement('a');
+                    link.href = `ofertas.html?id=${project.id}`;
+                    link.id = 'btnofer';
+                    link.classList.add('btn', 'btn-primary');
+                    link.textContent = 'Candidatar';
+                    card.appendChild(link);
+
                     // Adiciona o card ao container de cards de projetos
                     projectCardsContainer.appendChild(card);
                 });
@@ -410,7 +393,6 @@
             function filterProjects() {
                 fetchProjects().then(projects => {
                     let filteredProjects = projects;
-
                     // Obter valores selecionados nos filtros
                     const location = document.getElementById('location').value;
                     const category = document.getElementById('category').value;
@@ -477,23 +459,21 @@
 
             document.addEventListener("DOMContentLoaded", function () {
                 function postLogin() {
-                    let str = `
-            <div class="dropdown">
-                <button type="button" class="btn btn-primary dropdown-toggle" id="profileIcon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <div class="User" style="width: 60px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-person-circle profile-icon" viewBox="0 0 16 16">
-                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                            <path fill-rule="evenodd" d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM8 1a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.226 5.468 2.37A7 7 0 0 0 8 1Z"/>
-                        </svg>  
-                      <link rel="stylesheet" href="#">                  
-                    </div>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="profileIcon">
-                    <a class="dropdown-item" href="#" id="logoutLink">Logout</a>
-                </div>
-            </div>`;
+                    let str = `<div class="dropdown">
+                        <button type="button" class="btn btn-primary dropdown-toggle" id="profileIcon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="User" style="width: 60px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-person-circle profile-icon" viewBox="0 0 16 16">
+                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                                    <path fill-rule="evenodd" d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM8 1a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.226 5.468 2.37A7 7 0 0 0 8 1Z"/>
+                                </svg>
+                                <link rel="stylesheet" href="#">
+                            </div>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="profileIcon">
+                            <a class="dropdown-item" href="#" id="logoutLink">Logout</a>
+                        </div>
+                    </div>`;
                     document.getElementById("tela").innerHTML = str;
-
                     const logoutLink = document.getElementById("logoutLink");
                     logoutLink.addEventListener("click", function () {
                         logoutSite();
@@ -540,10 +520,7 @@
                     chamaPerfil();
                 });
             });
-
         </script>
-        
-
-    </body>
-
+    </main>
+</body>
 </html>
