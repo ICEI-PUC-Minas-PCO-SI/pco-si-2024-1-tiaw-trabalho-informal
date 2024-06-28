@@ -380,6 +380,13 @@ form textarea {
     max-height: 200px;
 }
 
+form input:hover,
+form textarea:hover {
+    background-color: #242424; /* Manter a cor de fundo padrão */
+    box-shadow: none; /* Remover o efeito de sombra */
+    transform: none; /* Remover a escala */
+}
+
 form .btn-enviar {
     margin-top: 20px;
     text-align: center;

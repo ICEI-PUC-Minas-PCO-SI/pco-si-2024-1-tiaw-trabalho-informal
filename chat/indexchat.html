@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="styleschat.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<header>
+    <div class="interface">
+        <div class="logo">
+            <a href="#">
+                <a href="../home-login/projetos.html">
+                    <img src="../home-login/macaco.png" alt="Logo MonkeyTech">
+                  </a>
+            </a>
+        </div><!-- logo -->
+        <nav class="menu-desktop">
+            <ul>
+                <li><a href="../home-login/projetos.html">Inicio</a></li>
+                <li><a href="#" id="publicarLink">Publicar</a></li>
+               
+          
+            </ul>
+        </nav>
+    </div>
+    <div id="tela"> </div>
+</header>
+<body>
+    <div class="container-chat">
+        <div class="contatos">
+            <h2>Contatos</h2>
+            <input type="text" id="input-pesquisa" placeholder="Procurar contatos...">
+            <ul id="lista-contatos">
+                <!-- Os cards de contatos serão adicionados aqui dinamicamente -->
+            </ul>
+        </div>
+        <div class="chat">
+            <div class="cabecalho-chat">
+                <h2 id="chat">Selecione um contato</h2>
+            </div>
+            <div class="mensagens-chat" id="mensagens-chat">
+                <!-- Mensagens do chat aparecerão aqui -->
+            </div>
+            <div class="entrada-chat">
+                <input type="text" id="entrada-mensagem" placeholder="Digite sua mensagem...">
+                <button id="botao-enviar"><i class="bi bi-send-fill"></i></button>
+            </div>
+        </div>
+    </div>
+    <script src="js/chat.js"></script>
+</body>
+</html>

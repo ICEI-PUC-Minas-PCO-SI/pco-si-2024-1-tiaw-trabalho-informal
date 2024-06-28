@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações Pessoais</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="imgs/macaco1.png" alt="Logo">
+            </div>
+            <nav>
+                <a href="#">Início</a>
+                <a href="#">Contato</a>
+                <a href="#">Sobre</a>
+                <a href="#">Publicar</a>
+            </nav>
+        </header>
+        <main>
+            <h1>Informações pessoais</h1>
+            <form id="personal-info-form">
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="sobrenome">Sobrenome</label>
+                    <input type="text" id="sobrenome" name="sobrenome" required>
+                </div>
+                <div class="form-group">
+                    <label for="interesses">Área de Interesses</label>
+                    <input type="text" id="interesses" name="interesses" required>
+                </div>
+                <div class="form-group">
+                    <label for="resumo">Resumo profissional</label>
+                    <textarea id="resumo" name="resumo" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="educacao">Educação e qualificações</label>
+                    <textarea id="educacao" name="educacao" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="habilidades">Habilidades e Competências</label>
+                    <textarea id="habilidades" name="habilidades" rows="3" required></textarea>
+                </div>
+                <div class="form-group foto-perfil">
+                    <label for="foto">Foto de perfil</label>
+                    <input type="file" id="foto" name="foto" accept="image/*">
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </main>
+        <footer>
+            <div class="social-media">
+                <a href="#"><img src="github-icon.png" alt="GitHub"></a>
+                <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+            </div>
+            <p>&copy; 2024 MonkeyTech Solutions - Todos os direitos reservados</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

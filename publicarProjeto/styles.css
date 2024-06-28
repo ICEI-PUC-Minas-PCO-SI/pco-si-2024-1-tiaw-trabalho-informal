@@ -1,0 +1,413 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ece2e2;
+  height: min-content;
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+#arquivo::-webkit-file-upload-button{
+  color: yellow;
+  background: black;
+  border: none;
+  cursor: pointer;
+  border-left: 3px solid yellow;
+  border-top: 3px solid yellow;
+  border-radius: 10px;
+}
+/* Estilo do cabeçalho */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #242424;
+  z-index: 1000;
+  padding: 10px 20px;
+  /* Ajuste do padding */
+}
+
+header .interface {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  /* Largura máxima ajustada */
+  margin: 0 auto;
+  /* Centraliza o cabeçalho */
+}
+
+header .logo img {
+  width: 80px;
+  /* Tamanho do ícone do macaco ajustado */
+  height: auto;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  transition: .2s;
+}
+
+header nav.menu-desktop ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+header nav.menu-desktop ul li {
+  margin: 0 10px;
+  /* Espaçamento entre os itens do menu */
+}
+
+main {
+  margin-top: 100px;
+  /* Ajusta o conteúdo para abaixo do cabeçalho fixo */
+}
+
+#tela {
+  float: right;
+  margin-right: 7%;
+  margin-top: -90px;
+  width: 5px;
+}
+
+.projetos {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.projetos p {
+  max-width: 100%;
+  word-wrap:break-word;
+}
+.Menu {
+  display: flex;
+}
+
+.MenuLink {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  font-size: 30px;
+}
+
+.group {
+  display: flex;
+  line-height: 28px;
+  align-items: center;
+  position: relative;
+  max-width: 190px;
+  margin: 0 auto;
+  /* Centralizando a barra de pesquisa */
+}
+
+.input {
+  width: 100%;
+  height: 40px;
+  line-height: 28px;
+  padding: 0 1rem;
+  padding-left: 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  outline: none;
+  background-color: #f3f3f4;
+  color: #0d0c22;
+  transition: .3s ease;
+}
+
+.input::placeholder {
+  color: #9e9ea7;
+}
+
+.input:focus,
+.input:hover {
+  outline: none;
+  border-color: rgba(234, 76, 137, 0.4);
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+}
+
+.icon {
+  position: absolute;
+  left: 1rem;
+  fill: #9e9ea7;
+  width: 1rem;
+  height: 1rem;
+}
+
+.User {
+  display: flex;
+  align-items: center;
+}
+
+.User a {
+  color: rgb(117, 117, 117);
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.Register,
+.Login {
+  display: none;
+  /* Inicialmente oculto */
+}
+
+h2,
+h1 {
+  margin-top: 20px;
+  text-align: center;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+label {
+  font-weight: bold;
+}
+
+#publicar,
+input[type="text"],
+input[type="date"],
+select,
+textarea,
+input[type="file"],
+button {
+  font-family: Arial, Helvetica, sans-serif;
+  background: black;
+  color: white;
+  border-radius: 10px;
+  height: 50px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.submitBtn {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 180px;
+  /* Ajustando largura conforme o texto */
+  margin-top: 10px;
+  /* Espaçamento entre os campos e o botão */
+}
+
+.submitBtn:hover,
+.filter-option button:hover {
+  background-color: #555;
+}
+
+#error-message {
+  color: red;
+  margin-bottom: 10px;
+}
+
+#sideNav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #333;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+#sideNav a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+
+#sideNav a:hover {
+  background-color: #555;
+}
+
+#prazo_entrega {
+  background: none;
+  color: black;
+  padding-right: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+}
+
+#menuBtn {
+  display: none;
+}
+
+/* Media queries para tornar o site responsivo */
+
+@media screen and (max-width: 600px) {
+  .group {
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .Menu {
+    display: none;
+  }
+
+  .MenuLink {
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  #menuBtn {
+    display: block;
+    position: absolute;
+    top: 7%;
+    transform: translateY(-50%);
+    right: 10px;
+    font-size: 18px;
+    width: 30px;
+    height: 30px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+    padding: 0;
+  }
+
+  .icon-menu {
+    margin-left: 5px;
+  }
+
+  .Register,
+  .Login {
+    display: none;
+  }
+}
+
+#filters {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.filter-option {
+  margin-bottom: 10px;
+}
+
+.filter-option label {
+  display: block;
+}
+
+.filter-option input[type="text"],
+.filter-option select,
+.filter-option input[type="date"] {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.filter-option button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#projectList {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#projectList > div {
+  margin-bottom: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#projectList h2 {
+  margin-top: 0;
+}
+
+#projectList img {
+  max-width: 100%;
+  height: auto;
+}
+
+#projectList button {
+  font-size: 20px;
+}
+
+footer {
+  background-color: #322E2E;
+  width: 100%;
+  text-align: center;
+  height: 200px;
+  margin-top: 10px !important;
+}
+
+.footer-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: larger !important;
+  align-items: center !important;
+  background: none !important;
+}
+
+footer p {
+  color: white;
+  font-size: 3vh !important;
+  margin-right: 20px !important;
+  margin-top: 20px !important;
+  margin-bottom: 0;
+}
+
+p a {
+  text-decoration: none;
+  color: white;
+}
+
+i {
+  color: white;
+  font-size: 40px;
+  margin-right: 20px;
+}
+
+span {
+  display: block;
+  padding-top: 15px;
+}

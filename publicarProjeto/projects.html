@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos Publicados</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="topic/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="interface">
+            <div class="logo">
+                <a href="#">
+                    <a href="../home-login/projetos.html">
+                        <img src="../home-login/macaco.png" alt="Logo MonkeyTech">
+                      </a>
+                </a>
+            </div><!-- logo -->
+            <nav class="menu-desktop">
+                <ul>
+                    <li><a href="../home-login/projetos.html">Inicio</a></li>
+                   
+                    <li><a href="#" id="chatLink">Chat</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="tela"> </div>
+    </header>
+
+
+    <div id="projetosPublicados">
+        <h1>Projetos Publicados</h1>
+        <div id="filters">
+            <!-- Filtro por nome do projeto -->
+            <div class="filter-option">
+                <label for="nome_projeto">Nome do Projeto:</label>
+                <input type="text" id="nome_projeto" name="nome_projeto">
+            </div>
+
+            <!-- Filtro por área do projeto -->
+            <div class="filter-option">
+                <label for="area_projeto">Área do Projeto:</label>
+                <select name="area_projeto" id="area_projeto">
+                    <option value="">Todas as Áreas</option>
+                    <option value="seguranca_informacao">Segurança da Informação</option>
+                    <option value="programacao">Programação</option>
+                    <option value="qualidade_software">Qualidade de Software</option>
+                    <!-- Adicionar outras opções de área aqui depois -->
+                </select>
+            </div>
+
+            <!-- Filtro por nível de projeto -->
+            <div class="filter-option">
+                <label for="nivel_projeto">Nível do Projeto:</label><br>
+                <input type="checkbox" id="iniciante" name="nivel_projeto" value="iniciante">
+                <label for="iniciante">Iniciante</label><br>
+                <input type="checkbox" id="intermediario" name="nivel_projeto" value="intermediario">
+                <label for="intermediario">Intermediário</label><br>
+                <input type="checkbox" id="experiente" name="nivel_projeto" value="experiente">
+                <label for="experiente">Experiente</label><br>
+            </div>
+
+            <!-- Filtro por prazo de entrega -->
+            <div class="filter-option">
+                <label for="prazo_entrega">Prazo de Entrega:</label>
+                <input type="date" id="prazo_entrega" name="prazo_entrega" required><br><br> <span
+                    id="prazoValor"></span>
+            </div>
+
+            <!-- Botão para aplicar os filtros -->
+            <button onclick="aplicarFiltros()" id="filter-button">Filtrar</button>
+        </div>
+
+        <div id="projectList">
+            <!-- Projetos serão adicionados aqui via JavaScript -->
+        </div>
+
+        <div id="main">
+            <div id="header_main">
+                <div id="title_header_main">
+                    <h1>PROJETO TESTE</h1>
+                    <i id="backToProjectsButton" class="bi bi-box-arrow-in-left"></i>
+                </div>
+                <p>Seus tópicos</p>
+            </div>
+            <div id="table_main">
+                <div id="buttonAdd_table_main">
+                    <i class="bi bi-plus-circle"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <p><a href="">Home </a></p>
+            <p><a href="">Mais </a></p>
+            <p><a href="">Política </a></p>
+            <p><a href="">Contato</a></p>
+        </div>
+        <span>
+            <a href="https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-trabalho-informal"><i
+                    class="bi bi-github"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+        </span>
+        <p>&copy; 2024 MonkeyTech Solutions - Todos os direitos reservados</p>
+    </footer>
+
+</body>
+
+<!-- ignore templateElement -->
+<div class="element_table_main" style="display: none;" id="templateElement">
+    <div class="infoElement_table_main">
+        <div class="boxSelect_infoElement_table_main"></div>
+        <input type="text" placeholder="...">
+    </div>
+    <i class="bi bi-trash-fill"></i>
+</div>
+
+</html>

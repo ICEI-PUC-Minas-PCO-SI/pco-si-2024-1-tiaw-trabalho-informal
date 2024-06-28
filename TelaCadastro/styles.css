@@ -1,0 +1,122 @@
+body {
+    background-color: #1c1c1c;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+header .logo img {
+    max-width: 50%;
+    max-height: 50%;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    text-align: center;
+}
+
+h1 {
+    color: #ffc107;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    margin: 10px 0;
+    width: 100%;
+}
+
+label {
+    display: block;
+    text-align: left;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+}
+
+input[type="file"] {
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffc107;
+    color: #1c1c1c;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #e0a800;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer .social-media {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+footer .social-media a {
+    margin: 0 10px;
+}
+
+footer .social-media img {
+    width: 50%;
+    height: 50%;
+}
+
+footer p {
+    font-size: 0.8em;
+    color: #ccc;
+}
+
+#informacoes-enviadas {
+    text-align: left;
+    margin-top: 20px;
+}
+
+#informacoes-enviadas p {
+    margin: 10px 0;
+}
