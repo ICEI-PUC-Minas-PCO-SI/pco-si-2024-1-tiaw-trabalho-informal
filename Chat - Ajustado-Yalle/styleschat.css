@@ -6,6 +6,41 @@ body {
     padding: 0;
 }
 
+/* Header */
+
+nav img{
+    max-width: 35%!important;
+}
+
+.collapsed{
+    border:#e2cc00 1px solid!important;
+}
+.navbar-toggler-icon{
+    color: #e2cc00!important;
+}
+
+.navbar{
+    background-color: #333;
+    display: flex!important;
+    justify-content: space-between!important;
+}
+
+/* Use caso necessite de estilização para os componentes */
+/* .navbar a {
+    color: #e2cc00!important;
+}
+
+nav li {
+    margin-left: 40px;
+} */
+
+/* #navbarNav{
+} */
+
+
+/* Fim do Header */
+
+
 .container-chat {
     display: flex;
     height: 100vh;
@@ -165,7 +200,41 @@ input::placeholder {
     color: #e2cc00;
 }
 
-
 li:hover {
     border: 2px solid #e2cc00;
 }
+
+/* Footer */
+
+footer a:hover{
+    text-decoration:none;
+}
+footer .section-padding {
+	padding: 20px 0;
+}
+footer .bottom {
+    background-color:#333;
+}
+footer .bottom .copyright {
+    color: #e5e5e5;
+    font-weight: 600;
+}
+.copyright a {
+    color: #f2ff49;
+    margin-left: 3px;
+    padding-right: 3px;
+}
+footer .bottom p {
+    margin-bottom: 0;
+    line-height: 50px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.copyright p span {
+    color: #d1caca;
+}
+footer .bottom .copyright p, .bottom .copyright a:hover{
+    color: #6c6d83;
+}
+
+/* Footer */
