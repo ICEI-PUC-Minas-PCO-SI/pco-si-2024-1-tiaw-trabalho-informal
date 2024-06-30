@@ -32,3 +32,11 @@ document.getElementById('personal-info-form').addEventListener('submit', functio
         console.error('Erro ao enviar as informações:', error);
     });
 });
+
+function logoInicial() {
+    window.location.href = "./home-login/index.html";
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.logo').addEventListener('click', logoInicial);
+});

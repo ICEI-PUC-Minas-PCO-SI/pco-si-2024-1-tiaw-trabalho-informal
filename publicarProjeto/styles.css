@@ -18,31 +18,11 @@ body {
   border-radius: 10px;
 }
 /* Estilo do cabeçalho */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #242424;
-  z-index: 1000;
-  padding: 10px 20px;
-  /* Ajuste do padding */
-}
+/* Header */
 
-header .interface {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  /* Largura máxima ajustada */
-  margin: 0 auto;
-  /* Centraliza o cabeçalho */
-}
-
-header .logo img {
-  width: 80px;
-  /* Tamanho do ícone do macaco ajustado */
-  height: auto;
+header nav.menu-desktop ul li {
+  margin: 0 10px;
+  /* Espaçamento entre os itens do menu */
 }
 
 header a {
@@ -50,18 +30,43 @@ header a {
   text-decoration: none;
   transition: .2s;
 }
-
 header nav.menu-desktop ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
 }
-
-header nav.menu-desktop ul li {
-  margin: 0 10px;
-  /* Espaçamento entre os itens do menu */
+nav img{
+  max-width: 35%!important;
 }
+
+.collapsed{
+  border:#e2cc00 1px solid!important;
+}
+.navbar-toggler-icon{
+  color: #e2cc00!important;
+}
+
+.navbar{
+  background-color: #333;
+  display: flex!important;
+  justify-content: space-between!important;
+}
+
+/* Use caso necessite de estilização para os componentes */
+/* .navbar a {
+  color: #e2cc00!important;
+}
+
+nav li {
+  margin-left: 40px;
+} */
+
+/* #navbarNav{
+} */
+
+
+/* Fim do Header */
 
 main {
   margin-top: 100px;

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filtro e Cards de Projetos</title>
+    <title>Filtro e Cards de Vagas</title>
     <link rel="stylesheet" href="vagas.css">
   
 </head>
@@ -50,15 +50,7 @@
                     <option value="Manaus, AM">Manaus, AM</option>
                 </select>
             </div>
-            <div class="select-box">
-                <label for="category">Categoria Projeto:</label>
-                <select id="category">
-                    <option value>Melhores projetos para você</option>
-                    <option value="publicado">Projetos Publicados</option>
-                    <option value="concluido">Projetos Concluídos</option>
-                    <option value="andamento">Projetos em andamento</option>
-                </select>
-            </div>
+           
             <div class="range-slider">
                 <label for="price-range">Preço:</label>
                 <input type="range" id="price-range" min="100" max="13000"
@@ -89,7 +81,7 @@
         <script>
             async function fetchProjects() {
 try {
-    const response = await fetch('059b1ee9-ce33-4b95-8cd6-3b8468c167f0-00-3adhzxokdlz4g.worf.replit.dev/envioProjetos'); // URL da sua API
+    const response = await fetch('https://059b1ee9-ce33-4b95-8cd6-3b8468c167f0-00-3adhzxokdlz4g.worf.replit.dev/vagas'); // URL da sua API
     const projects = await response.json();
     return projects;
 } catch (error) {
@@ -233,14 +225,12 @@ fetchProjects().then(projects => {
                 let filteredProjects = projects;
                 // Obter valores selecionados nos filtros
                 const location = document.getElementById('location').value;
-                const category = document.getElementById('category').value;
                 const minPrice = parseInt(document.getElementById('price-range').value);
                 const experienceLevel = document.querySelector('.experience-level .level.selected').id;
 
                 // Aplicar filtros
                 filteredProjects = filteredProjects.filter(project => {
                     let passLocation = true;
-                    let passCategory = true;
                     let passPrice = true;
                     let passExperience = true;
 
@@ -249,14 +239,6 @@ fetchProjects().then(projects => {
                         passLocation = false;
                     }
 
-              // Filtro por categoria
-              if (category === 'publicado' && project.statusProjeto !== 'publicado') {
-                            passCategory = false;
-                        } else if (category === 'concluido' && project.statusProjeto !== 'concluido') {
-                            passCategory = false;
-                        } else if (category === 'andamento' && project.statusProjeto !== 'andamento') {
-                            passCategory = false;
-                        }
 
                     // Filtro por preço
                     if (project.valor && parseCurrency(project.valor) < minPrice) {
@@ -269,7 +251,7 @@ fetchProjects().then(projects => {
                     }
 
                     // Retornar true se o projeto passar por todos os filtros
-                    return passLocation && passCategory && passPrice && passExperience;
+                    return passLocation && passPrice && passExperience;
                 });
 
                 // Renderizar os projetos filtrados
