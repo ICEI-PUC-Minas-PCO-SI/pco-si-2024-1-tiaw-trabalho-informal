@@ -133,6 +133,10 @@
     
         // Função para exibir o conteúdo na tela
         function exibeConteudo() {
+            let today = new Date();
+            let currentYear = today.getFullYear();
+            let currentMonth = String(today.getMonth() + 1).padStart(2, '0');
+            let minDate = `${currentYear}-${currentMonth}`;
             let str = `
             <div class="artefato">
                 <div class="grid">
@@ -199,7 +203,7 @@
                     </span>
                     <span class="span3">
                         <p>Validade</p>
-                        <input type="month" id="data" placeholder="00/00" required>
+                        <input type="month" id="data" placeholder="00/00" min="${minDate}" required>
                     </span>
                     <span class="span4">
                         <p>Função</p>
