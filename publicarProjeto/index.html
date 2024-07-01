@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Projeto</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <section class="body">
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a href="projects.html">
+                    <img src="logo.png" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="#">
+                                <i class="bi bi-chat-dots-fill"></i>
+                            </a>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    
+        <h2>Publicar Projeto</h1>
+            <form id="projectForm">
+                <label for="area">Área do Projeto:</label>
+                <select name="area" id="area" required>
+                    <option value="">Selecione a Área</option>
+                    <option value="seguranca_informacao">Segurança da Informação</option>
+                    <option value="programacao">Programação</option>
+                    <option value="qualidade_software">Qualidade de Software</option>
+                    <!-- Adicionar outras opções de área aqui depois -->
+                </select><br><br>
+    
+                <label for="nivel">Nível do Projeto:</label><br>
+                <select name="nivel" id="nivel" required>
+                    <option value="">Selecione o Nível</option>
+                    <option value="iniciante">Iniciante</option>
+                    <option value="intermediario">Intermediário</option>
+                    <option value="experiente">Experiente</option>
+                </select><br><br>
+    
+                <label for="nome_projeto">Nome do Projeto:</label>
+                <input type="text" id="nome_projeto" name="nome_projeto" required><br><br>
+    
+                <label for="descricao_projeto">Descrição do Projeto:</label><br>
+                <textarea id="descricao_projeto" name="descricao_projeto" rows="4" cols="50" required></textarea><br><br>
+    
+                <label for="prazo_entrega">Prazo de Entrega:</label>
+                <input type="date" id="prazo_entrega" name="prazo_entrega" required><br><br>
+    
+                <label for="arquivo">Selecionar Arquivo:</label>
+                <input type="file" id="arquivo" name="arquivo" accept="image/*" multiple required><br><br>
+    
+                <input type="button" id="publicar" value="Publicar Projeto" onclick="publicarProjeto()">
+            </form>
+            <footer>
+                <div class="bottom section-padding">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <div class="copyright">
+                                    <p>© <span>2024</span> <a href="#" class="transition">Monkey Tech Solutions</a> Todos
+                                        Direitos Reservados.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+    </section>
+</body>
+</html>

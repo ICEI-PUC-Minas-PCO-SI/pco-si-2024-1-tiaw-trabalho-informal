@@ -1,0 +1,84 @@
+{
+    "vagas": [
+        {
+            "id": 1,
+            "CompanyName": "Ze das couves",
+            "Location": "Contagem",
+            "nome_vaga": "Desenvolvedor Java",
+            "Descricao": "Necessario forte exepriencia na linguagem java, necessidade de atuacao em warroom",
+            "Categoria": "Senior/Especialista",
+            "idCategoria": 1
+        },
+        {
+            "id": 2,
+            "CompanyName": "Pastelaria do Jão",
+            "Location": "Belo Horizonte",
+            "nome_vaga": "Desenvolvedor Typescript",
+            "Descricao": "Typescript",
+            "Categoria": "Pleno",
+            "idCategoria": 2
+        },
+        {
+            "id": 3,
+            "CompanyName": "Maria do Bairro",
+            "Location": "Betim",
+            "nome_vaga": "Desenvolvedor DotNet",
+            "Descricao": "Necessida Alto conhecimento C#",
+            "Categoria": "Junior",
+            "idCategoria": 3
+        },
+        {
+            "id": 4,
+            "CompanyName": "Marvelous Tech",
+            "Location": "Contagem",
+            "nome_vaga": "Desenvolvedor Java",
+            "Descricao": "Necessario forte exepriencia na linguagem java, necessidade de atuacao em warroom",
+            "Categoria": "Pleno",
+            "idCategoria": 4
+        },
+        {
+            "id": 5,
+            "CompanyName": "Hamburgueria do Zeca",
+            "Location": "Betim",
+            "nome_vaga": "Desenvolvedor Typescript",
+            "Descricao": "Typescript",
+            "Categoria": "Senior/Especialista",
+            "idCategoria": 5
+        },
+        {
+            "id": 6,
+            "CompanyName": "Mercadinho do Frango",
+            "Location": "Belo Horizonte",
+            "nome_vaga": "Desenvolvedor Java",
+            "Descricao": "Necessario forte exepriencia na linguagem java, necessidade de atuacao em warroom",
+            "Categoria": "Junior",
+            "idCategoria": 6
+        }
+    ],
+    "senioridade": [
+        {
+            "id": 1,
+            "Descricao": "Senior/Especialista"
+        },
+        {
+            "id": 2,
+            "Descricao": "Pleno"
+        },
+        {
+            "id": 3,
+            "Descricao": "Junior"
+        },
+        {
+            "id": 4,
+            "Descricao": "Pleno"
+        },
+        {
+            "id": 5,
+            "Descricao": "Senior/Especialista"
+        },
+        {
+            "id": 6,
+            "Descricao": "Junior"
+        }
+    ]
+}

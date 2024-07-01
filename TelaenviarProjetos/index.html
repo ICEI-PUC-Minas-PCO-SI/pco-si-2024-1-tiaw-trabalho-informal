@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título do Projeto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/imgs/macaco.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Publicar</a></li>
+                <li><a href="#" class="perfil">Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Título do Projeto</h1>
+        <section class="form-section">
+            <h2>Enviar projeto</h2>
+            <form id="project-form">
+                <label for="project-file">Selecione o arquivo do projeto</label>
+                <input type="file" id="project-file" name="project-file">
+                <label for="comments">Comentários</label>
+                <textarea id="comments" name="comments" rows="4"></textarea>
+                <button type="submit">Concluir</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="social-icons">
+            <a href="#"><img src="github-icon.png" alt="GitHub"></a>
+            <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+        <p>&copy; 2024 MonkeyTech Solutions - Todos os direitos reservados</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

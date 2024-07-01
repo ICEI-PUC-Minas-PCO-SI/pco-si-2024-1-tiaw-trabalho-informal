@@ -1,0 +1,242 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(56, 49, 49);
+    margin: 0;
+    padding-top: 80px;
+    /* Adiciona espaço para o cabeçalho fixo */
+}
+.filter-card select {
+    background-color: #000;
+    color: #FFD700;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.filter-card select option {
+    background-color: #000;
+    color: #FFD700;
+}
+.filter-card {
+    background-color: rgb(56, 49, 49);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.filter-card h2,
+.filter-card h3,
+.filter-card label {
+    margin: 0 0 10px;
+}
+.filter-card .select-box {
+    margin-bottom: 20px;
+}
+.filter-card .range-slider {
+    margin-bottom: 20px;
+    position: relative;
+}
+.filter-card .range-slider label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+    font-size: 12px;
+}
+.filter-card .range-slider input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    background: #ddd;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .15s ease-in-out;
+    position: absolute;
+    top: 40px;
+}
+.filter-card>div{
+    
+}
+.filter-card .range-slider input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #4CAF50;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.filter-card .range-slider input[type="range"]::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: #4CAF50;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.filter-card .range-slider-value {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #ffffff;
+    margin-top: 5px;
+    padding: 0 5px;
+}
+.filter-card .experience-level {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background-color: yellow!important;
+}
+.filter-card .experience-level .level {
+    width: 30%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: yellow;
+    color: black;
+    cursor: pointer;
+}
+.filter-card .experience-level .level.selected {
+    background-color: #FFD700;
+    color: black;
+}
+
+.filter-card .experience-level .level:hover {
+    background-color: #FFD700;
+}
+.filter-card .filter-button {
+    display: flex;
+    justify-content: center;
+}
+.filter-card .filter-button button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: yellow;
+    color: black;
+    cursor: pointer;
+    font-size: 16px;
+}
+.filter-card .filter-button button:hover {
+    background-color: #FFD700;
+}
+.project-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 20px;
+    padding: 20px;
+}
+.project-card {
+    background-color: rgb(56, 49, 49);
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    border: 2px solid yellow;
+}
+.project-card h2,
+.project-card p {
+    margin: 0 0 10px;
+}
+.project-card .skills {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #666;
+    margin-top: 10px;
+}
+.project-card .skill-box {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    width: 75px;
+    border-radius: 4px;
+    color: #FFD700;
+}
+/* Estilo do cabeçalho */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #242424;
+    z-index: 1000;
+    padding: 10px 20px;
+    /* Ajuste do padding */
+}
+header .interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    /* Largura máxima ajustada */
+    margin: 0 auto;
+    /* Centraliza o cabeçalho */
+}
+header .logo img {
+    width: 80px;
+    /* Tamanho do ícone do macaco ajustado */
+    height: auto;
+}
+header a {
+    color: #fff;
+    text-decoration: none;
+    transition: .2s;
+}
+header nav.menu-desktop ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+header nav.menu-desktop ul li {
+    margin: 0 10px;
+    /* Espaçamento entre os itens do menu */
+}
+main {
+    margin-top: 100px;
+    /* Ajusta o conteúdo para abaixo do cabeçalho fixo */
+}
+#tela {
+    float: right;
+    margin-right: 7%;
+    margin-top: -90px;
+    width: 5px;
+}
+#profileIcon {
+    background-color: #575656;
+    color: #ffd700;
+}
+
+/* Botão Candidatar */
+.btn-primary {
+    background-color: yellow;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #FFD700;
+    color: black;
+}

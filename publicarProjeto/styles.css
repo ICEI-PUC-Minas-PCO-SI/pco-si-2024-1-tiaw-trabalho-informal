@@ -1,0 +1,248 @@
+/* Header */
+.navbar img {
+  max-width: 35% !important;
+}
+
+.navbar-toggler {
+  width: min-content;
+}
+
+.navbar {
+  background-color: #333;
+}
+
+/* Use caso necessite de estilização para os componentes */
+.navbar a {
+  color: #e2cc00 !important;
+}
+
+nav li {
+  margin-left: 40px;
+}
+nav i {
+  font-size: 40px;
+}
+
+
+/* Fim do Header */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+  background-color: #2f2f2f;
+  height: min-content;
+  font-family: Arial, Helvetica, sans-serif !important;
+  color: #e2cc00!important;
+}
+
+
+#arquivo::-webkit-file-upload-button{
+  color: yellow;
+  background: black;
+  border: none;
+  cursor: pointer;
+  border-left: 3px solid yellow;
+  border-top: 3px solid yellow;
+  border-radius: 10px;
+}
+
+.projetos {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.projetos p{
+  word-wrap: break-word!important;
+  max-width: 100%;
+}
+
+
+h2,
+h1 {
+  margin-top: 20px;
+  text-align: center;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #333333;
+  margin-bottom: 30px;
+}
+
+label {
+  font-weight: bold;
+}
+
+#publicar,
+input[type="text"],
+input[type="date"],
+select,
+textarea,
+input[type="file"],
+button {
+  font-family: Arial, Helvetica, sans-serif;
+  background: black;
+  color:#e2cc00;
+  border-radius: 10px;
+  height: 50px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.submitBtn {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 180px;
+  /* Ajustando largura conforme o texto */
+  margin-top: 10px;
+  /* Espaçamento entre os campos e o botão */
+}
+
+.submitBtn:hover,
+.filter-option button:hover {
+  background-color: #555;
+}
+
+#error-message {
+  color: red;
+  margin-bottom: 10px;
+}
+
+#prazo_entrega {
+  background: none;
+  color:#e2cc00;
+  padding-right: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  background:#333;
+}
+
+#menuBtn {
+  display: none;
+}
+
+/* Media queries para tornar o site responsivo */
+
+#filters {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.filter-option {
+  margin-bottom: 10px;
+}
+
+.filter-option label {
+  display: block;
+}
+
+.filter-option input[type="text"],
+.filter-option select,
+.filter-option input[type="date"] {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.filter-option button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#projectList {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#projectList > div {
+  margin-bottom: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#projectList h2 {
+  margin-top: 0;
+}
+
+.projetos img {
+  max-width: 100%;
+  height: auto;
+}
+
+#projectList button {
+  font-size: 20px;
+}
+
+/* Footer */
+footer a:hover {
+  text-decoration: none;
+}
+
+footer .section-padding {
+  padding: 20px 0;
+}
+
+footer .bottom {
+  background-color: #333;
+}
+
+footer .bottom .copyright {
+  color: #e5e5e5;
+  font-weight: 600;
+}
+
+.copyright a {
+  color: #f2ff49;
+  margin-left: 3px;
+  padding-right: 3px;
+}
+
+footer .bottom p {
+  margin-bottom: 0;
+  line-height: 50px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.copyright p span {
+  color: #d1caca;
+}
+
+footer .bottom .copyright p,
+.bottom .copyright a:hover {
+  color: #6c6d83;
+}
