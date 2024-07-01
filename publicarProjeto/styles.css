@@ -1,13 +1,43 @@
+/* Header */
+.navbar img {
+  max-width: 35% !important;
+}
+
+.navbar-toggler {
+  width: min-content;
+}
+
+.navbar {
+  background-color: #333;
+}
+
+/* Use caso necessite de estilização para os componentes */
+.navbar a {
+  color: #e2cc00 !important;
+}
+
+nav li {
+  margin-left: 40px;
+}
+nav i {
+  font-size: 40px;
+}
+
+
+/* Fim do Header */
 * {
   margin: 0;
   padding: 0;
 }
 
-body {
-  background-color: #ece2e2;
+.body {
+  background-color: #2f2f2f;
   height: min-content;
   font-family: Arial, Helvetica, sans-serif !important;
+  color: #e2cc00!important;
 }
+
+
 #arquivo::-webkit-file-upload-button{
   color: yellow;
   background: black;
@@ -16,68 +46,6 @@ body {
   border-left: 3px solid yellow;
   border-top: 3px solid yellow;
   border-radius: 10px;
-}
-/* Estilo do cabeçalho */
-/* Header */
-
-header nav.menu-desktop ul li {
-  margin: 0 10px;
-  /* Espaçamento entre os itens do menu */
-}
-
-header a {
-  color: #fff;
-  text-decoration: none;
-  transition: .2s;
-}
-header nav.menu-desktop ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-nav img{
-  max-width: 35%!important;
-}
-
-.collapsed{
-  border:#e2cc00 1px solid!important;
-}
-.navbar-toggler-icon{
-  color: #e2cc00!important;
-}
-
-.navbar{
-  background-color: #333;
-  display: flex!important;
-  justify-content: space-between!important;
-}
-
-/* Use caso necessite de estilização para os componentes */
-/* .navbar a {
-  color: #e2cc00!important;
-}
-
-nav li {
-  margin-left: 40px;
-} */
-
-/* #navbarNav{
-} */
-
-
-/* Fim do Header */
-
-main {
-  margin-top: 100px;
-  /* Ajusta o conteúdo para abaixo do cabeçalho fixo */
-}
-
-#tela {
-  float: right;
-  margin-right: 7%;
-  margin-top: -90px;
-  width: 5px;
 }
 
 .projetos {
@@ -89,81 +57,11 @@ main {
   justify-content: center;
   align-items: center;
 }
-.projetos p {
+.projetos p{
+  word-wrap: break-word!important;
   max-width: 100%;
-  word-wrap:break-word;
-}
-.Menu {
-  display: flex;
 }
 
-.MenuLink {
-  color: white;
-  text-decoration: none;
-  margin-right: 20px;
-  font-size: 30px;
-}
-
-.group {
-  display: flex;
-  line-height: 28px;
-  align-items: center;
-  position: relative;
-  max-width: 190px;
-  margin: 0 auto;
-  /* Centralizando a barra de pesquisa */
-}
-
-.input {
-  width: 100%;
-  height: 40px;
-  line-height: 28px;
-  padding: 0 1rem;
-  padding-left: 2.5rem;
-  border: 2px solid transparent;
-  border-radius: 15px;
-  outline: none;
-  background-color: #f3f3f4;
-  color: #0d0c22;
-  transition: .3s ease;
-}
-
-.input::placeholder {
-  color: #9e9ea7;
-}
-
-.input:focus,
-.input:hover {
-  outline: none;
-  border-color: rgba(234, 76, 137, 0.4);
-  background-color: #fff;
-  box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
-}
-
-.icon {
-  position: absolute;
-  left: 1rem;
-  fill: #9e9ea7;
-  width: 1rem;
-  height: 1rem;
-}
-
-.User {
-  display: flex;
-  align-items: center;
-}
-
-.User a {
-  color: rgb(117, 117, 117);
-  text-decoration: none;
-  margin-left: 10px;
-}
-
-.Register,
-.Login {
-  display: none;
-  /* Inicialmente oculto */
-}
 
 h2,
 h1 {
@@ -178,6 +76,8 @@ form {
   border: 2px solid #000000;
   border-radius: 5px;
   font-family: Arial, Helvetica, sans-serif;
+  background: #333333;
+  margin-bottom: 30px;
 }
 
 label {
@@ -193,7 +93,7 @@ input[type="file"],
 button {
   font-family: Arial, Helvetica, sans-serif;
   background: black;
-  color: white;
+  color:#e2cc00;
   border-radius: 10px;
   height: 50px;
   border: none;
@@ -230,38 +130,13 @@ button {
   margin-bottom: 10px;
 }
 
-#sideNav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  background-color: #333;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-
-#sideNav a {
-  padding: 10px 15px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #fff;
-  display: block;
-  transition: 0.3s;
-}
-
-#sideNav a:hover {
-  background-color: #555;
-}
-
 #prazo_entrega {
   background: none;
-  color: black;
+  color:#e2cc00;
   padding-right: 50px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: large;
+  background:#333;
 }
 
 #menuBtn {
@@ -269,50 +144,6 @@ button {
 }
 
 /* Media queries para tornar o site responsivo */
-
-@media screen and (max-width: 600px) {
-  .group {
-    max-width: 100%;
-    margin: 0 auto;
-    position: relative;
-  }
-
-  .Menu {
-    display: none;
-  }
-
-  .MenuLink {
-    display: block;
-    text-align: center;
-    margin: 10px 0;
-  }
-
-  #menuBtn {
-    display: block;
-    position: absolute;
-    top: 7%;
-    transform: translateY(-50%);
-    right: 10px;
-    font-size: 18px;
-    width: 30px;
-    height: 30px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    z-index: 2;
-    padding: 0;
-  }
-
-  .icon-menu {
-    margin-left: 5px;
-  }
-
-  .Register,
-  .Login {
-    display: none;
-  }
-}
 
 #filters {
   max-width: 500px;
@@ -367,7 +198,7 @@ button {
   margin-top: 0;
 }
 
-#projectList img {
+.projetos img {
   max-width: 100%;
   height: auto;
 }
@@ -376,43 +207,42 @@ button {
   font-size: 20px;
 }
 
-footer {
-  background-color: #322E2E;
-  width: 100%;
-  text-align: center;
-  height: 200px;
-  margin-top: 10px !important;
-}
-
-.footer-grid {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  font-size: larger !important;
-  align-items: center !important;
-  background: none !important;
-}
-
-footer p {
-  color: white;
-  font-size: 3vh !important;
-  margin-right: 20px !important;
-  margin-top: 20px !important;
-  margin-bottom: 0;
-}
-
-p a {
+/* Footer */
+footer a:hover {
   text-decoration: none;
-  color: white;
 }
 
-i {
-  color: white;
-  font-size: 40px;
-  margin-right: 20px;
+footer .section-padding {
+  padding: 20px 0;
 }
 
-span {
-  display: block;
-  padding-top: 15px;
+footer .bottom {
+  background-color: #333;
+}
+
+footer .bottom .copyright {
+  color: #e5e5e5;
+  font-weight: 600;
+}
+
+.copyright a {
+  color: #f2ff49;
+  margin-left: 3px;
+  padding-right: 3px;
+}
+
+footer .bottom p {
+  margin-bottom: 0;
+  line-height: 50px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.copyright p span {
+  color: #d1caca;
+}
+
+footer .bottom .copyright p,
+.bottom .copyright a:hover {
+  color: #6c6d83;
 }

@@ -71,9 +71,12 @@ header {
 header>.interface {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content;
+ 
 }
-
+header button {
+    float: right;
+}
 header a {
     color: #fff;
     text-decoration: none;
@@ -81,10 +84,6 @@ header a {
     transition: .2s;
 }
 
-main div:hover{
-    background: rgb(223, 223, 86);
-    color:#242424;
-}
 i.bi-chat-dots-fill:hover{
     color: #242424;
     

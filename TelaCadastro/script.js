@@ -27,10 +27,12 @@ document.getElementById('personal-info-form').addEventListener('submit', functio
         localStorage.setItem('informacaoEnviada', JSON.stringify(data));
         // Redireciona para a página de confirmação
         window.location.href = 'confirmacao.html';
+   
     })
     .catch(error => {
         console.error('Erro ao enviar as informações:', error);
     });
+    
 });
 
 function logoInicial() {

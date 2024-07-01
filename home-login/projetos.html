@@ -171,29 +171,8 @@ const applicationData = {
 
 // Log the application data to console (or you can store/send it as needed)
 console.log('Application Data:', JSON.stringify(applicationData));
-
-// Optionally, you can send the application data to your server
-try {
-    const response = await fetch('https://059b1ee9-ce33-4b95-8cd6-3b8468c167f0-00-3adhzxokdlz4g.worf.replit.dev/candidaturas', { // URL to apply for a position
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(applicationData) // Send application data as payload
-    });
-
-    if (response.ok) {
-        const result = await response.json();
-        alert('Candidatura enviada com sucesso!');
-        updateApplicationStatus(projectId, 'applied');
-    } else {
-        throw new Error('Failed to apply for position');
-    }
-} catch (error) {
-    console.error('Erro ao enviar candidatura:', error);
-    alert('Erro ao enviar candidatura. Tente novamente mais tarde.');
 }
-}
+
 
 function updateApplicationStatus(projectId, status) {
 // Find the card with the given projectId and update its status
@@ -360,6 +339,32 @@ fetchProjects().then(projects => {
                 chamaPerfil();
             });
         });
+
+     // Menu mobile
+     document.getElementById("btn-menu").addEventListener("click", function () {
+          document.getElementById("menu-mobile").style.transform = "translateX(0)";
+          document.getElementById("overlay-menu").style.display = "block";
+          showloading();
+          setTimeout(() => hideloading(), 1000); // Adjust the timeout as needed
+      });
+  
+      document.getElementById("btn-fechar-menu").addEventListener("click", function () {
+          document.getElementById("menu-mobile").style.transform = "translateX(100%)";
+          document.getElementById("overlay-menu").style.display = "none";
+          showloading();
+          setTimeout(() => hideloading(), 1000); // Adjust the timeout as needed
+      });
+  
+      document.getElementById("overlay-menu").addEventListener("click", function () {
+          document.getElementById("menu-mobile").style.transform = "translateX(100%)";
+          document.getElementById("overlay-menu").style.display = "none";
+          showloading();
+          setTimeout(() => hideloading(), 1000); // Adjust the timeout as needed
+      });
+  
+      // Initial loading call
+      showloading();
+      setTimeout(() => hideloading(), 1000); // Adjust the timeout as needed
     </script>
     </main>
 </body>

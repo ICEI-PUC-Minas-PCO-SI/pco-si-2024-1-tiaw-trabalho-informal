@@ -9,7 +9,7 @@
     margin: 0;
     text-align: left;
     font-family: "Public Sans", sans-serif;
-    color: #1c1c1c;
+    color:#e2cc00;
     border: 0;
     padding: 0;
 }
@@ -53,7 +53,7 @@ i {
     padding: 65px 50px;
     border-radius: 3px;
     border: solid 2px black;
-    background-color: #fff;
+    background-color: #2f2f2f;
 }
 
 #header_main {
@@ -100,6 +100,7 @@ i {
     border: solid 2px black;
     max-height: 410px;
     overflow: auto;
+    color: #e2cc00;
 }
 
 #table_main::-webkit-scrollbar {
@@ -115,7 +116,7 @@ i {
     justify-content: center;
     align-items: center;
     padding: 14px;
-    background-color: #fff;
+    /* background-color: black; */
 }
 
 .element_table_main {
@@ -123,15 +124,16 @@ i {
 }
 
 .element_table_main.selectElement {
-    background-color: #f7f7f7;
+    background-color:#2f2f2f;
 }
 
 .element_table_main.selectElement .boxSelect_infoElement_table_main {
-    background-color: #161616;
+    background-color: #e2cc00;
 }
 
+
 .element_table_main.selectElement input {
-    background-color: #f7f7f7;
+    background-color:#2f2f2f;
     text-decoration: line-through;
 }
 
@@ -172,7 +174,7 @@ input,
 
 .element_table_main input,
 #main textarea {
-    color: black !important;
+    color:#e2cc00 !important;
     background: none;
     outline: none;
     font-size: 3vh;
@@ -191,13 +193,6 @@ input,
     cursor: pointer;
 }
 
-#buttonAdd_table_main:hover {
-    background-color: #f7f7f7;
-}
-
-body {
-    background: white;
-}
 
 #filters {
     border: 2px solid black;
@@ -214,11 +209,14 @@ body {
 i.bi.bi-plus-circle,
 i.bi.bi-box-arrow-in-left,
 i.bi.bi-trash-fill {
-    color: black;
+    color:#e2cc00;
+    font-size: 40px;
 }
 
 #projetosPublicados {
     height: 100%;
     width: 100%;
     position: relative;
+    background: #2f2f2f;
+    color: #e2cc00;
 }

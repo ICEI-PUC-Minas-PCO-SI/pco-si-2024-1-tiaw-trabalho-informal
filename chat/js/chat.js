@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('json/users.json')
+    fetch('https://059b1ee9-ce33-4b95-8cd6-3b8468c167f0-00-3adhzxokdlz4g.worf.replit.dev/cadastro_clientes')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
@@ -29,7 +29,7 @@ function exibirContatos(contatos) {
         a.innerHTML = `
             <img src="${usuario.img}" alt="">
             <div class="detalhes-contato">
-                <div class="nome-contato">${usuario.name}</div>
+                <div class="nome-contato">${usuario.nome}</div>
                 <div class="email-contato">${usuario.email}</div>
             </div>
         `;

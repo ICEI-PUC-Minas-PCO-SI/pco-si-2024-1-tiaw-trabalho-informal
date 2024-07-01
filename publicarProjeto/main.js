@@ -1,23 +1,23 @@
-// use para limpar o localstoragee
-// localStorage.clear();
-
-let databaseTopics = {
-    // será usado no arquivo do topico.html para saber qual topico é pra mostrar
-    topicoInteiroJSON: [],
-    selecionarQualTopico: 0,
-};
-
 let database = {
+    id: "",
     nameTopic: "",
     topicSubject: [],
     selectFinishTopic: []
-};
-
-const retrievedDataBaseJSON = localStorage.getItem("databaseTopics");
-if (retrievedDataBaseJSON) {
-    const retrievedDatabase = JSON.parse(retrievedDataBaseJSON);
-    databaseTopics = retrievedDatabase;
 }
+
+let indexProjectSelect = 0;
+
+fetch('https://059b1ee9-ce33-4b95-8cd6-3b8468c167f0-00-3adhzxokdlz4g.worf.replit.dev/topics')
+    .then(response => response.json())
+    .then(data => {
+        database = data.map(topic => ({
+            id: topic.id,
+            nameTopic: topic.nameTopic,
+            topicSubject: topic.topicSubject,
+            selectFinishTopic: topic.selectFinishTopic
+        }));
+    })
+    .catch(error => console.error('Erro ao receber tópicos:', error));
 
 function publicarProjeto() {
     // Adicionar a imagem ao projeto, se uma imagem for selecionada
@@ -36,21 +36,37 @@ function publicarProjeto() {
         var reader = new FileReader();
         reader.onload = function (event) {
             projeto.Imagem = event.target.result; // Armazenar a imagem no projeto
-            // Armazenar o projeto temporariamente no localStorage
-            var projetosPublicados = JSON.parse(localStorage.getItem('projetos')) || [];
-            projetosPublicados.push(projeto);
-            localStorage.setItem('projetos', JSON.stringify(projetosPublicados));
-            // Redirecionar para a tela de Projetos Publicados
-            window.location.href = 'projects.html';
+            // Fazer uma solicitação POST para o json-server
+            fetch('https://059b1ee9-ce33-4b95-8cd6-3b8468c167f0-00-3adhzxokdlz4g.worf.replit.dev/projetos', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(projeto)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    // Redirecionar para a tela de Projetos Publicados
+                    window.location.href = 'projects.html';
+                })
+                .catch(error => console.error('Erro ao salvar o projeto:', error));
         };
         reader.readAsDataURL(imagem);
     } else {
         // Se nenhuma imagem for selecionada, armazenar o projeto sem imagem
-        var projetosPublicados = JSON.parse(localStorage.getItem('projetos')) || [];
-        projetosPublicados.push(projeto);
-        localStorage.setItem('projetos', JSON.stringify(projetosPublicados));
-        // Redirecionar para a tela de Projetos Publicados
-        window.location.href = 'projects.html';
+        fetch('https://059b1ee9-ce33-4b95-8cd6-3b8468c167f0-00-3adhzxokdlz4g.worf.replit.dev/projetos', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(projeto)
+        })
+            .then(response => response.json())
+            .then(data => {
+                // Redirecionar para a tela de Projetos Publicados
+                window.location.href = 'projects.html';
+            })
+            .catch(error => console.error('Erro ao salvar o projeto:', error));
     }
 
     // criar novo topico para esse projeto
@@ -60,53 +76,60 @@ function publicarProjeto() {
         selectFinishTopic: []
     };
 
-    databaseTopics.topicoInteiroJSON.push(database);
-    const databaseTopicsJSON = JSON.stringify(databaseTopics);
-    localStorage.setItem("databaseTopics", databaseTopicsJSON);
+    // Supondo que você tenha um endpoint /topics no seu json-server
+    fetch('https://059b1ee9-ce33-4b95-8cd6-3b8468c167f0-00-3adhzxokdlz4g.worf.replit.dev/topics', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(database)
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Topico criado com sucesso:', data);
+        })
+        .catch(error => console.error('Erro ao criar o tópico:', error));
 }
 
 // Função para exibir os projetos publicados
 let projectButtonFinalList;
 function exibirProjetos() {
-    // Recuperar projetos do localStorage
-    var projetos = JSON.parse(localStorage.getItem('projetos')) || [];
-    var projectList = document.getElementById('projectList');
+    // Fazer uma solicitação GET para obter os projetos
+    fetch('https://059b1ee9-ce33-4b95-8cd6-3b8468c167f0-00-3adhzxokdlz4g.worf.replit.dev/projetos')
+        .then(response => response.json())
+        .then(projetos => {
+            var projectList = document.getElementById('projectList');
+            projectList.innerHTML = ''; // Limpar a lista de projetos
 
-    // Exibir projetos na tela
-    projetos.forEach(function (projeto) {
-        var divProjeto = document.createElement('div');
-        divProjeto.className = "projetos";
-        var titulo = document.createElement('h2');
-        titulo.textContent = projeto.Nome;
-        var imagem = document.createElement('img');
-        imagem.src = projeto.Imagem; // Utiliza a imagem armazenada no projeto
-        imagem.alt = "Imagem do Projeto";
-        var descricao = document.createElement('p');
-        descricao.textContent = projeto.Descricao;
-        var buttonOpenTopic = document.createElement('button');
-        buttonOpenTopic.textContent = "Ver tópicos do projeto";
+            // Exibir projetos na tela
+            projetos.forEach(function (projeto, index) {
+                var divProjeto = document.createElement('div');
+                divProjeto.className = "projetos";
+                var titulo = document.createElement('h2');
+                titulo.textContent = projeto.Nome;
+                var imagem = document.createElement('img');
+                imagem.src = projeto.Imagem; // Utiliza a imagem armazenada no projeto
+                imagem.alt = "Imagem do Projeto";
+                var descricao = document.createElement('p');
+                descricao.textContent = projeto.Descricao;
+                var buttonOpenTopic = document.createElement('button');
+                buttonOpenTopic.textContent = "Ver tópicos do projeto";
 
-        divProjeto.appendChild(titulo);
-        divProjeto.appendChild(imagem);
-        divProjeto.appendChild(descricao);
-        divProjeto.appendChild(buttonOpenTopic);
-        projectList.appendChild(divProjeto);
+                divProjeto.appendChild(titulo);
+                divProjeto.appendChild(imagem);
+                divProjeto.appendChild(descricao);
+                divProjeto.appendChild(buttonOpenTopic);
+                projectList.appendChild(divProjeto);
 
-        // add event click in buttonOpenTopic
-        eventClickToOpenTopic(buttonOpenTopic, -1);
-        buttonOpenTopic.addEventListener('click', moveMainDiv);
-    });
+                // add event click in buttonOpenTopic
+                eventClickToOpenTopic(buttonOpenTopic, index);
+            });
 
-    // salvar a var projetos antes de modifcações feita no filtro pra evitar problemas ao pegar o index no eventClickToOpenTopic
-    var projectButtonList = document.querySelectorAll('#projectList button');
-    projectButtonFinalList = projectButtonList;
-}
-
-function moveMainDiv(event) {
-    const mainDiv = document.getElementById('main');
-    const parentOfClickedDiv = event.currentTarget.parentNode;
-
-    parentOfClickedDiv.appendChild(mainDiv);
+            // salvar a var projetos antes de modifcações feita no filtro pra evitar problemas ao pegar o index no eventClickToOpenTopic
+            var projectButtonList = document.querySelectorAll('#projectList button');
+            projectButtonFinalList = projectButtonList;
+        })
+        .catch(error => console.error('Erro ao obter projetos:', error));
 }
 
 function eventClickToOpenTopic(button, indexElement) {
@@ -121,28 +144,34 @@ function eventClickToOpenTopic(button, indexElement) {
             index = projectListButtonArray.indexOf(button);
         }
 
-        // mandar selecionar o topico clicado
-        databaseTopics.selecionarQualTopico = index;
-        const databaseTopicsJSON = JSON.stringify(databaseTopics);
-        localStorage.setItem("databaseTopics", databaseTopicsJSON);
+        indexProjectSelect = index;
 
-        const main = document.querySelector("#main");
+        // Fazer uma solicitação GET para obter os tópicos
+        fetch('https://059b1ee9-ce33-4b95-8cd6-3b8468c167f0-00-3adhzxokdlz4g.worf.replit.dev/topics')
+            .then(response => response.json())
+            .then(topicos => {
+                const main = document.querySelector("#main");
+                main.style.display = "flex";
 
-        main.style.display = "flex";
+                const nameTopic = document.querySelector("#title_header_main h1");
+                nameTopic.textContent = topicos[index].nameTopic;
 
-        database = databaseTopics.topicoInteiroJSON[index];
+                for (let i = 0; i < topicos[index].topicSubject.length; i++) {
+                    addNewTopic(topicos[index].topicSubject[i], topicos[index].selectFinishTopic[i], false);
+                }
 
-        // put nome topic
-        const nameTopic = document.querySelector("#title_header_main h1");
-        nameTopic.textContent = databaseTopics.topicoInteiroJSON[index].nameTopic;
-
-        // carrega os topicos
-        for (let i = 0; i < databaseTopics.topicoInteiroJSON[index].topicSubject.length; i++) {
-            addNewTopic(databaseTopics.topicoInteiroJSON[index].topicSubject[i], databaseTopics.topicoInteiroJSON[index].selectFinishTopic[i], false);
-        };
-
+            })
+            .catch(error => console.error('Erro ao obter tópicos:', error));
     });
 }
+
+function moveMainDiv(event) {
+    const mainDiv = document.getElementById('main');
+    const parentOfClickedDiv = event.currentTarget.parentNode;
+
+    parentOfClickedDiv.appendChild(mainDiv);
+}
+
 
 // Se a página for a de Projetos Publicados, chama a função para exibir os projetos
 if (window.location.pathname.includes('projects.html')) {
@@ -151,74 +180,76 @@ if (window.location.pathname.includes('projects.html')) {
 
 // Função para filtrar os projetos publicados
 function filtrarProjetos() {
-    // Recuperar projetos do localStorage
-    var projetos = JSON.parse(localStorage.getItem('projetos')) || [];
-    var filteredProjects = projetos;
+    // Fazer uma solicitação GET para obter os projetos do json-server
+    fetch('https://059b1ee9-ce33-4b95-8cd6-3b8468c167f0-00-3adhzxokdlz4g.worf.replit.dev/projetos')
+        .then(response => response.json())
+        .then(projetos => {
+            var filteredProjects = projetos;
 
-    // Filtrar por nome do projeto
-    var nomeProjeto = document.getElementById('nome_projeto').value.trim().toLowerCase();
-    if (nomeProjeto !== '') {
-        filteredProjects = filteredProjects.filter(function (projeto) {
-            return projeto.Nome.toLowerCase().includes(nomeProjeto);
-        });
-    }
+            // Filtrar por nome do projeto
+            var nomeProjeto = document.getElementById('nome_projeto').value.trim().toLowerCase();
+            if (nomeProjeto !== '') {
+                filteredProjects = filteredProjects.filter(function (projeto) {
+                    return projeto.Nome.toLowerCase().includes(nomeProjeto);
+                });
+            }
 
-    // Filtrar por área do projeto
-    var areaProjeto = document.getElementById('area_projeto').value;
-    if (areaProjeto !== '') {
-        filteredProjects = filteredProjects.filter(function (projeto) {
-            return projeto.Area === areaProjeto;
-        });
-    }
+            // Filtrar por área do projeto
+            var areaProjeto = document.getElementById('area_projeto').value;
+            if (areaProjeto !== '') {
+                filteredProjects = filteredProjects.filter(function (projeto) {
+                    return projeto.Area === areaProjeto;
+                });
+            }
 
-    // Filtrar por nível de projeto
-    var niveisSelecionados = Array.from(document.querySelectorAll('input[name=nivel_projeto]:checked')).map(function (input) {
-        return input.value;
-    });
-    if (niveisSelecionados.length > 0) {
-        filteredProjects = filteredProjects.filter(function (projeto) {
-            return niveisSelecionados.includes(projeto.Nivel);
-        });
-    }
+            // Filtrar por nível de projeto
+            var niveisSelecionados = Array.from(document.querySelectorAll('input[name=nivel_projeto]:checked')).map(function (input) {
+                return input.value;
+            });
+            if (niveisSelecionados.length > 0) {
+                filteredProjects = filteredProjects.filter(function (projeto) {
+                    return niveisSelecionados.includes(projeto.Nivel);
+                });
+            }
 
-    // Filtrar por prazo de entrega
-    var prazoEntrega = document.getElementById('prazo_entrega').value;
-    if (prazoEntrega !== '') {
-        filteredProjects = filteredProjects.filter(function (projeto) {
-            return projeto.Prazo <= prazoEntrega;
-        });
-    }
+            // Filtrar por prazo de entrega
+            var prazoEntrega = document.getElementById('prazo_entrega').value;
+            if (prazoEntrega !== '') {
+                filteredProjects = filteredProjects.filter(function (projeto) {
+                    return projeto.Prazo <= prazoEntrega;
+                });
+            }
 
-    // Limpar a lista de projetos antes de exibir os resultados do filtro
-    var projectList = document.getElementById('projectList');
-    var projectListAll = document.querySelectorAll('#projectList');
-    const projectListAllArray = Array.from(projectListAll);
+            // Limpar a lista de projetos antes de exibir os resultados do filtro
+            var projectList = document.getElementById('projectList');
+            projectList.innerHTML = '';
 
-    projectList.innerHTML = '';
+            // Exibir projetos filtrados na tela
+            filteredProjects.forEach(function (projeto) {
+                var divProjeto = document.createElement('div');
+                divProjeto.className = "projetos";
+                var titulo = document.createElement('h2');
+                titulo.textContent = projeto.Nome;
+                var imagem = document.createElement('img');
+                imagem.src = projeto.Imagem; // Utiliza a imagem armazenada no projeto
+                imagem.alt = "Imagem do Projeto";
+                var descricao = document.createElement('p');
+                descricao.textContent = projeto.Descricao;
+                var buttonOpenTopic = document.createElement('button');
+                buttonOpenTopic.textContent = "Ver os topicos do projeto";
 
-    // Exibir projetos filtrados na tela
-    filteredProjects.forEach(function (projeto) {
-        var divProjeto = document.createElement('div');
-        var titulo = document.createElement('h2');
-        titulo.textContent = projeto.Nome;
-        var imagem = document.createElement('img');
-        imagem.src = projeto.Imagem; // Utiliza a imagem armazenada no projeto
-        imagem.alt = "Imagem do Projeto";
-        var descricao = document.createElement('p');
-        descricao.textContent = projeto.Descricao;
-        var buttonOpenTopic = document.createElement('button');
-        buttonOpenTopic.textContent = "Clique os topicos desse projeto";
+                divProjeto.appendChild(titulo);
+                divProjeto.appendChild(imagem);
+                divProjeto.appendChild(descricao);
+                divProjeto.appendChild(buttonOpenTopic);
+                projectList.appendChild(divProjeto);
 
-        divProjeto.appendChild(titulo);
-        divProjeto.appendChild(imagem);
-        divProjeto.appendChild(descricao);
-        divProjeto.appendChild(buttonOpenTopic);
-        projectList.appendChild(divProjeto);
-
-        // add event click in buttonOpenTopic
-        let index = projetos.indexOf(projeto);
-        eventClickToOpenTopic(buttonOpenTopic, index);
-    });
+                // add event click in buttonOpenTopic
+                let index = projetos.indexOf(projeto);
+                eventClickToOpenTopic(buttonOpenTopic, index);
+            });
+        })
+        .catch(error => console.error('Erro ao obter projetos:', error));
 }
 
 // Função para atualizar o valor do prazo de entrega selecionado
@@ -275,8 +306,8 @@ const templateElement = document.getElementById('templateElement');
 
 buttonAdd.addEventListener('click', () => {
     addNewTopic("", 0, true);
-    database.topicSubject.push("");
-    database.selectFinishTopic.push(0);
+    database[indexProjectSelect].topicSubject.push("");
+    database[indexProjectSelect].selectFinishTopic.push(0);
     saveChangesInDatabase();
 });
 
@@ -295,10 +326,10 @@ function addEventClickInButton(button, countDatabase) {
         count++
         if (count == 2) {
             count = 0;
-            database.selectFinishTopic[index] = 0;
+            database[indexProjectSelect].selectFinishTopic[index] = 0;
             elementTable[index].classList.remove('selectElement');
         } else {
-            database.selectFinishTopic[index] = 1;
+            database[indexProjectSelect].selectFinishTopic[index] = 1;
             elementTable[index].classList.add('selectElement');
         }
 
@@ -330,8 +361,8 @@ function addEventClickInDelete(buttonDelete) {
 
         const index = buttonsArray.indexOf(buttonDelete);
         removeTopic(index);
-        database.topicSubject.splice(index, 1);
-        database.selectFinishTopic.splice(index, 1);
+        database[indexProjectSelect].topicSubject.splice(index, 1);
+        database[indexProjectSelect].selectFinishTopic.splice(index, 1);
         saveChangesInDatabase();
     });
 };
@@ -342,7 +373,7 @@ function addEventChangeText(inputChange) {
         const inputsArray = Array.from(inputs);
         const index = inputsArray.indexOf(inputChange);
 
-        database.topicSubject[index] = inputChange.value;
+        database[indexProjectSelect].topicSubject[index] = inputChange.value;
         saveChangesInDatabase();
     });
 };
@@ -459,25 +490,16 @@ function removeTopic(elementIndex) {
 }
 
 function saveChangesInDatabase() {
-    const index = databaseTopics.selecionarQualTopico;
-    databaseTopics.topicoInteiroJSON[index] = database;
-
-    const databaseJSON = JSON.stringify(databaseTopics);
-    localStorage.setItem("databaseTopics", databaseJSON);
+    fetch(`https://059b1ee9-ce33-4b95-8cd6-3b8468c167f0-00-3adhzxokdlz4g.worf.replit.dev/topics/${database[indexProjectSelect].id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(database[indexProjectSelect])
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Tópico atualizado:', data);
+    })
+    .catch(error => console.error('Erro ao atualizar tópico:', error));
 }
-
-// util
-function resetDatabase() {
-    let databaseNew = {
-        nameTopic: database.nameTopic,
-        topicSubject: [],
-        selectFinishTopic: []
-    };
-
-    const index = databaseTopics.selecionarQualTopico;
-    databaseTopics.topicoInteiroJSON[index] = databaseNew;
-
-    const databaseJSON = JSON.stringify(databaseTopics);
-    localStorage.setItem("databaseTopics", databaseJSON);
-}
-

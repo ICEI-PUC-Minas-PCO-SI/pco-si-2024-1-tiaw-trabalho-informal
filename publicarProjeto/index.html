@@ -13,94 +13,75 @@
 </head>
 
 <body>
-    <header>
+    <section class="body">
+
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-               <a href="#">
-                   <img src="./imgs/logo.png" alt="">
-               </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <nav class="menu-desktop">
-                    <ul>
-                        <li><a href="../home-login/projetos.html">Inicio</a></li>
-                        
-                        <li><a href="#" id="chatLink">Chat</a></li>
-    
+                <a href="projects.html">
+                    <img src="logo.png" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="#">
+                                <i class="bi bi-chat-dots-fill"></i>
+                            </a>
                     </ul>
-               
-              </div>
+                </div>
             </div>
-          </nav>
-
-       
-            </nav>
-        </div>
-
-        <div id="tela"> </div>
-    </header>
-
-    <h2>Publicar Projeto</h1>
-        <form id="projectForm">
-            <label for="area">Área do Projeto:</label>
-            <select name="area" id="area" required>
-                <option value="">Selecione a Área</option>
-                <option value="seguranca_informacao">Segurança da Informação</option>
-                <option value="programacao">Programação</option>
-                <option value="qualidade_software">Qualidade de Software</option>
-                <!-- Adicionar outras opções de área aqui depois -->
-            </select><br><br>
-
-            <label for="nivel">Nível do Projeto:</label><br>
-            <select name="nivel" id="nivel" required>
-                <option value="">Selecione o Nível</option>
-                <option value="iniciante">Iniciante</option>
-                <option value="intermediario">Intermediário</option>
-                <option value="experiente">Experiente</option>
-            </select><br><br>
-
-            <label for="nome_projeto">Nome do Projeto:</label>
-            <input type="text" id="nome_projeto" name="nome_projeto" required><br><br>
-
-            <label for="descricao_projeto">Descrição do Projeto:</label><br>
-            <textarea id="descricao_projeto" name="descricao_projeto" rows="4" cols="50" required></textarea><br><br>
-
-            <label for="prazo_entrega">Prazo de Entrega:</label>
-            <input type="date" id="prazo_entrega" name="prazo_entrega" required><br><br>
-
-            <label for="arquivo">Selecionar Arquivo:</label>
-            <input type="file" id="arquivo" name="arquivo" accept="image/*" multiple required><br><br>
-
-            <input type="button" id="publicar" value="Publicar Projeto" onclick="publicarProjeto()">
-        </form>
-
-        <footer>
-            <div class="footer-grid">
-                <p><a href="">Home </a></p>
-                <p><a href="">Mais </a></p>
-                <p><a href="">Política </a></p>
-                <p><a href="">Contato</a></p>
-            </div>
-            <span>
-                <a href="https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2024-1-tiaw-trabalho-informal"><i class="bi bi-github"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
-            </span>
-            <p>&copy; 2024 MonkeyTech Solutions - Todos os direitos reservados</p>
-        </footer>
+        </nav>
+    
+        <h2>Publicar Projeto</h1>
+            <form id="projectForm">
+                <label for="area">Área do Projeto:</label>
+                <select name="area" id="area" required>
+                    <option value="">Selecione a Área</option>
+                    <option value="seguranca_informacao">Segurança da Informação</option>
+                    <option value="programacao">Programação</option>
+                    <option value="qualidade_software">Qualidade de Software</option>
+                    <!-- Adicionar outras opções de área aqui depois -->
+                </select><br><br>
+    
+                <label for="nivel">Nível do Projeto:</label><br>
+                <select name="nivel" id="nivel" required>
+                    <option value="">Selecione o Nível</option>
+                    <option value="iniciante">Iniciante</option>
+                    <option value="intermediario">Intermediário</option>
+                    <option value="experiente">Experiente</option>
+                </select><br><br>
+    
+                <label for="nome_projeto">Nome do Projeto:</label>
+                <input type="text" id="nome_projeto" name="nome_projeto" required><br><br>
+    
+                <label for="descricao_projeto">Descrição do Projeto:</label><br>
+                <textarea id="descricao_projeto" name="descricao_projeto" rows="4" cols="50" required></textarea><br><br>
+    
+                <label for="prazo_entrega">Prazo de Entrega:</label>
+                <input type="date" id="prazo_entrega" name="prazo_entrega" required><br><br>
+    
+                <label for="arquivo">Selecionar Arquivo:</label>
+                <input type="file" id="arquivo" name="arquivo" accept="image/*" multiple required><br><br>
+    
+                <input type="button" id="publicar" value="Publicar Projeto" onclick="publicarProjeto()">
+            </form>
+            <footer>
+                <div class="bottom section-padding">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <div class="copyright">
+                                    <p>© <span>2024</span> <a href="#" class="transition">Monkey Tech Solutions</a> Todos
+                                        Direitos Reservados.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+    </section>
 </body>
-<script>
-    function chamaChat() {
-    window.location.href = "../chat/indexchat.html";
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('chatLink').addEventListener('click', function (event) {
-        event.preventDefault(); // Evita que o link padrão seja seguido
-        chamaChat();
-    });
-});
-</script>
 </html>
