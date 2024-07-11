@@ -1,65 +1,69 @@
 <<<<<<< HEAD
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
-title: 
+title: Monkey tech solutions
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names:
+  - family-names: Muniz
+    given-names: Allan
+  - family-names: Barbosa 
+    given-names: Christiano
+  - family-names: Marques
+    given-names: Thiago
+  - family-names: Madureira
+    given-names: Gabriel
+  - family-names: Cunha
+    given-names: Rômulo
+  - family-names: Miranda
+    given-names: Wendell
+  - family-names: Magalhães
+    given-names: Yalle
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Vasconcelos
+    given-names: Amália
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Cardoso
+    given-names: Leonardo
 keywords:
-  - 
-  - 
+  - TI
+  - Freelancer
 repository-code: 
 license: CC-BY-4.0
 version: 1.0.0
-date-released: 2022-07-14
+date-released: 2024-07-11
 =======
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
-title: 
+title: Monkey tech solutions
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names:
+  - family-names: Muniz
+    given-names: Allan
+  - family-names: Barbosa
+    given-names: Christiano
+  - family-names: Marques
+    given-names: Thiago
+  - family-names: Madureira
+    given-names: Gabriel
+  - family-names: Cunha
+    given-names: Rômulo
+  - family-names: Miranda
+    given-names: Wendell
+  - family-names: Magalhães
+    given-names: Yalle
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Vasconcelos
+    given-names: Amália
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Cardoso
+    given-names: Leonardo
 keywords:
-  - 
-  - 
+  - TI
+  - Freelancer
 repository-code: 
 license: CC-BY-4.0
 version: 1.0.0
-date-released: 2022-07-14
+date-released: 2024-07-11
 >>>>>>> 576e4073eb686b7caee5801aac8f95491eb4d605
